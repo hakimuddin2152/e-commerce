@@ -6,6 +6,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
+
 // Connect To Database (NEW) But not working!!!!!!!!!! (because of secret in db.js!!!!!)
 //const db = require('./config/database');
 // Map global promise - get rid of warning
@@ -32,7 +33,8 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 
 const users = require('./routes/users');
-
+const categories=require('./routes/category')
+const products=require('./routes/product')
 // Port Number
 const port = process.env.PORT || 8080;
 
@@ -52,7 +54,8 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
-
+app.use('/category',categories);
+app.use('/product',products)
 // Index Route
 app.get('/', (req, res) => {
   res.send('invaild endpoint');
