@@ -21,6 +21,7 @@ import {ProductFilterComponent} from 'app/components/products/product-filter/pro
 import { ProductCardComponent } from 'app/components/product-card/product-card.component';
 import { ProductService } from 'app/services/product.service';
 import { CategoryService } from 'app/services/category.service';
+import { AdminOrdersComponent } from 'app/components/admin/admin-orders/admin-orders.component';
 
 const appRoutes: Routes =  [
   {path:'', component: ProductsComponent},
@@ -34,6 +35,7 @@ const appRoutes: Routes =  [
 @NgModule({
   declarations: [
     AppComponent,
+    AdminOrdersComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
