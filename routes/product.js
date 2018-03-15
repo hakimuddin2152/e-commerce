@@ -35,6 +35,16 @@ productRoutes.route('/getallproducts').get(function (req, res) {
   });
 }); 
 
+productRoutes.route('/getproductsbycategory/:category').get(function (req, res) {
+  Product.getProductsByCategory(req.params.category,(err,products) => {
+    if(err) {
+      res.json({success: false, msg: 'Failed to get product list'});
+    } else {
+      res.json(products);
+    }
+  });
+}); 
+
 productRoutes.route('/updateProduct/:product_id').put(function (req, res) {
 console.log('update method')
   Product.findById(req.params.product_id, function (err, prod) {

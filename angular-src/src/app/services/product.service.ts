@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   getAll() : Observable<Response>{
-    let url="product/getallproducts";
+    let url="http://localhost:8080/product/getallproducts";
    //return this.db.list('/categories',).valueChanges();
    return this.http.get(url).map(
      response => {
@@ -43,6 +43,17 @@ export class ProductService {
     return null;
   }
 
+  getProductByCategory(categoryname):Observable<Response> { 
+    let url="http://localhost:8080/product/getproductsbycategory/"+categoryname;
+    //return this.db.list('/categories',).valueChanges();
+    return this.http.get(url).map(
+      response => {
+        let body = response.json();
+        return body || {};
+      }
+    
+    )
+  }
   update(productId, product) { 
     //return this.db.object('/products/' + productId).update(product);
     return null;

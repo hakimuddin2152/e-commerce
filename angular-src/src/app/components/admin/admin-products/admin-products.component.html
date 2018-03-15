@@ -1,44 +1,92 @@
+<div class="row">
+  <div class="col-3">
+      <ul class="list-group">
+          <li  class="list-group-item">
+              <!-- <li class="nav-item"> -->
+              <a class="nav-link" id="productLink" (click)="showForm($event)">Add Product</a>
+            </li>
 
-<p>
-  <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
-</p>
-<p>
-  <input 
-    #query
-    (keyup)="filter(query.value)"
-    type="text" class="form-control" placeholder="Search...">
-</p>
+          <li  class="list-group-item">
+            <!-- <li class="nav-item"> -->
+            <a class="nav-link" id="categoryLink" (click)="showForm($event)">Add Category</a>
+          </li>
+                 </ul>
 
-<!-- <data-table
-  [items]="items"
-  [itemCount]="itemCount"
-  (reload)="reloadItems($event)">
-  <data-table-column
-    [property]="'title'"  
-    [header]="'Title'"
-    [sortable]="true"
-    [resizable]="true"
-  >
-  </data-table-column>
-  
-  <data-table-column
-    [property]="'price'"  
-    [header]="'Price'"
-    [sortable]="true"
-    [resizable]="true"
-  >
-    <ng-template #dataTableCell let-item="item">
-      {{ item.price | currency:'USD':true }}
-    </ng-template>
-  </data-table-column>
+        </div>
 
-  <data-table-column
-    [property]="'$key'"  
-  >
-    <ng-template #dataTableCell let-item="item">
-      <a [routerLink]="['/admin/products/', item.$key]">Edit</a>
-    </ng-template>
-  </data-table-column>
+        <div *ngIf="showCategoryForm" class="col-9">
+            <form #f="ngForm" (ngSubmit)="saveCategory(f.value)">
+                <div class="form-group">
+                  <label for="name">Key</label>
+                  <input type="text" ngModel name="key" 
+                  class="form-control" id="name" aria-describedby="title" 
+                  placeholder="Enter Category Name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Title</label>
+                    <input type="text" ngModel name="title" rows="4" class="form-control" id="description" aria-describedby="Description" 
+                    placeholder="Enter Description">
+                  </div>
+                  <div class="form-group">
+                    <label for="category">Is Category a featured category?</label>
+                    <select class="form-control" ngModel name="featured" id="featured">
+                      <option  value="true">True</option>
+                      <option  value="false">False</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Category Image</label>
+                    <input type="text" ngModel name="imageUrl" rows="4" 
+                    class="form-control" id="imageUrl" aria-describedby="Description" 
+                    placeholder="Enter Category Image URL">
+                  </div>
+        
+                  <div class="form-group">
+                <button type="save" class="btn btn-primary">Save</button>
+              </div>
+              </form>
+        
+        
+        </div>
 
-</data-table>
- -->
+<div *ngIf="showProductForm" class="col-9">
+    <form #f="ngForm" (ngSubmit)="saveProduct(f.value)">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" ngModel name="title" 
+          class="form-control" id="title" aria-describedby="title" 
+          placeholder="Enter title">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" ngModel name="description" rows="4" class="form-control" id="description" aria-describedby="Description" 
+            placeholder="Enter Description">
+          </div>
+
+        <div class="form-group">
+          <label for="category">Select Category</label>
+          <select class="form-control" ngModel name="category" id="category">
+            <option *ngFor="let c of categories$ | async"  [value]="c.key">{{c.title }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" ngModel name="price" class="form-control" id="price" 
+            aria-describedby="Price" 
+            placeholder="Enter price">
+          </div>
+
+        <div class="form-group">
+            <label for="imageUrl">Image Url</label>
+            <input type="text" ngModel name="imageUrl" 
+            class="form-control" id="imageUrl" aria-describedby="Image Url" 
+            placeholder="Enter Image Url">
+          </div>
+          <div class="form-group">
+        <button type="save" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+
+
+</div>   
+</div>

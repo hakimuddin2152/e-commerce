@@ -13,7 +13,10 @@ const Product = module.exports = mongoose.model('Product', ProductSchema);
 module.exports.getAllProducts = function(callback) {
     Product.find(callback);
   }
-  
+  module.exports.getProductsByCategory=function(category,callback){
+    const query = {category: category}
+    Product.find(query, callback);
+  }
   module.exports.addProduct = function(product, callback) {
     product.save(callback)
     

@@ -14,6 +14,7 @@ export class AuthService {
       }
 
   registerUser(user) {
+    console.log(user)
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('users/register', user, {headers: headers})

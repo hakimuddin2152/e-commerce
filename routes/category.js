@@ -7,12 +7,12 @@ const Category=require('../models/category');
 categoryRoutes.route('/addcategory').post(function (req, res) {
 	console.log("inside category")
     let newCategory = new Category({
-    title :req.body.title,
     key :req.body.key,
+    title :req.body.title,
     featured : req.body.featured,
     imageUrl : req.body.imageUrl
 	});
-	
+	console.log(newCategory)
 	Category.addCategory(newCategory,(err, cat) => {
       if(err) {
         res.json({success: false, msg: 'Failed to add category'});

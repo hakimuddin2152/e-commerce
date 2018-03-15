@@ -22,20 +22,24 @@ import { ProductCardComponent } from 'app/components/product-card/product-card.c
 import { ProductService } from 'app/services/product.service';
 import { CategoryService } from 'app/services/category.service';
 import { AdminOrdersComponent } from 'app/components/admin/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from 'app/components/admin/admin-products/admin-products.component';
 
 const appRoutes: Routes =  [
-  {path:'', component: ProductsComponent},
+  {path:'', component: HomeComponent},
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
-  {path:'products', component:ProductsComponent}
+  {path:'products/:category', component:ProductsComponent},
+  {path:'products', component:ProductsComponent},
+  {path:'admin/products', component:AdminProductsComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminOrdersComponent,
+    AdminProductsComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,

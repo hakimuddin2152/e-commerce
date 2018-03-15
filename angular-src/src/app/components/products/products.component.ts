@@ -2,20 +2,21 @@ import { ShoppingCart } from './../../model/shopping-cart';
 import { Observable } from 'rxjs/Observable';
 //import { ShoppingCartService } from './../../services/shopping-cart.service';
 import { Product } from './../../model/product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 import { CategoryService } from 'app/services/category.service';
+import { Response } from '@angular/http/src/static_response';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit{
   //products: Product[] = [];
-  products:Observable<Response>;
+  products:Observable<any>;
   filteredProducts: Product[] = [];
   category: string;
   cart$: Observable<ShoppingCart>;
@@ -26,9 +27,9 @@ export class ProductsComponent {
     private categoryService:CategoryService,
     //private shoppingCartService: ShoppingCartService
   ) {
-    this.categories$=categoryService.getAll();
-    this.products=this.productService.getAll();
-    console.log(this.products)
+    //this.categories$=categoryService.getAll();
+    //this.products=this.productService.getAll();
+    //console.log(this.products)
   }
 
   // async ngOnInit() {
@@ -54,4 +55,11 @@ export class ProductsComponent {
     //this.products.filter(p => p.category === this.category) : 
    // this.products;
   }
+  ngOnInit(){ 
+    console.log('this.route.paramMap')
+this.products=this.route.paramMap.switchMap((params: ParamMap) =>
+this.productService.getProductByCategory(params.get('category')))
+  }
+
+  ngOnDestroy
 }

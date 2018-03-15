@@ -1,5 +1,5 @@
-import { Product } from './../../../model/product';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { CategoryService } from 'app/services/category.service';
 import { ProductService } from './../../../services/product.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
@@ -9,48 +9,35 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.css']
 })
-export class AdminProductsComponent implements OnInit, OnDestroy {
-  products: Product[];
-  subscription: Subscription;
-  //tableResource: DataTableResource<Product>;
-  items: Product[] = [];
-  itemCount: number; 
-
-  constructor(private productService: ProductService) { 
-    this.subscription = this.productService.getAll()
-      .subscribe(products => {
-        //this.products = products;
-        //this.initializeTable(products);
-      });
+export class AdminProductsComponent implements OnInit {
+  categories$:Observable<any>;
+  constructor(private categorieService: CategoryService) { 
+    this.categories$=categorieService.getAll()
   }
+  showProductForm:boolean
+  showCategoryForm:boolean=true
+  showForm(event)
+   {
+     let linkId=event.srcElement.attributes.id.nodeValue
+     console.log(linkId)
+     console.log(event)
+     if(linkId=="productLink")
+     {
+     this.showCategoryForm=false
+     this.showProductForm=true
+     }
+     else if (linkId=="categoryLink")
+     {
+      this.showProductForm=false
+       this.showCategoryForm=true
+      
+     }
+   }
 
-  // private initializeTable(products: Product[]) {
-  //   this.tableResource = new DataTableResource(products);
-  //   this.tableResource.query({ offset: 0 })
-  //     .then(items => this.items = items);
-  //   this.tableResource.count()
-  //     .then(count => this.itemCount = count);
-  // }
-
-  // reloadItems(params) {
-  //   if (!this.tableResource) return;
-
-  //   this.tableResource.query(params)
-  //     .then(items => this.items = items);    
-  // }
-
-  // filter(query: string) { 
-  //   let filteredProducts = (query) ?
-  //     this.products.filter(p => p.title.toLowerCase().includes(query.toLowerCase())) :
-  //     this.products;
-
-  //   this.initializeTable(filteredProducts);
-  // }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
+   saveCategory(formData){
+     console.log(formData)
+    this.categorieService.saveCategory(formData)
+   }
   ngOnInit() {
   }
 

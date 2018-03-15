@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 //import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { query } from '@angular/core/src/animation/dsl';
 import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import { Http ,Headers} from '@angular/http';
+import { Response } from '@angular/http/';
 
 @Injectable()
 export class CategoryService {
@@ -12,7 +13,7 @@ export class CategoryService {
    }
 
    getAll() : Observable<Response>{
-     let url="category/getallcategories";
+     let url="http://localhost:8080/category/getallcategories";
     //return this.db.list('/categories',).valueChanges();
     return this.http.get(url).map(
       response => {
@@ -21,7 +22,18 @@ export class CategoryService {
       }
     
     )
-    //return null;
-   }
+
+  }
+  saveCategory(category):Observable<Response>{
+    console.log(category)
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let url="http://localhost:8080/category/addcategory";
+    return this.http.post(url,category,{headers: headers})
+    .map(response=>response.json())
+   
+   
+  
+ }
 
 }

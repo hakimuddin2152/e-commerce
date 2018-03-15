@@ -13,7 +13,7 @@ export class ProductFilterComponent implements OnInit {
 
   constructor(categoryService: CategoryService) {
     this.categories$ = categoryService.getAll();
-    console.log(this.categories$)
+    
   }
 
   ngOnInit() {

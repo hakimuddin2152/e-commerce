@@ -1,6 +1,6 @@
-# MEANauthapp
+# Ecommerce Application
 
-Complete MEAN stack application with authentication using json web tokens
+Ecommerce Application built with angular 2 and node js
 
 ### Version
 1.0.0
@@ -21,4 +21,4 @@ Run app
 $ npm start
 ```
 
-### Screenshots in Wiki: https://github.com/tomcatbuzz/meanauthapp/wiki
+
