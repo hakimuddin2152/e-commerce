@@ -44,7 +44,7 @@ export class ProductService {
   }
 
   getProductByCategory(categoryname):Observable<Response> { 
-    let url="http://localhost:8080/product/getproductsbycategory/"+categoryname;
+    let url="product/getproductsbycategory/"+categoryname;
     //return this.db.list('/categories',).valueChanges();
     return this.http.get(url).map(
       response => {

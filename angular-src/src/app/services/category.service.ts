@@ -13,7 +13,7 @@ export class CategoryService {
    }
 
    getAll() : Observable<Response>{
-     let url="http://localhost:8080/category/getallcategories";
+     let url="category/getallcategories";
     //return this.db.list('/categories',).valueChanges();
     return this.http.get(url).map(
       response => {
@@ -28,7 +28,7 @@ export class CategoryService {
     console.log(category)
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let url="http://localhost:8080/category/addcategory";
+    let url="category/addcategory";
     return this.http.post(url,category,{headers: headers})
     .map(response=>response.json())
    
