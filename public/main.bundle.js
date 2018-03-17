@@ -170,19 +170,18 @@ var AngularMaterialModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MatNativeDateModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MatPaginatorModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["s" /* MatProgressBarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["t" /* MatProgressSpinnerModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MatRadioModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MatRippleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["w" /* MatSelectModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["x" /* MatSidenavModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["z" /* MatSliderModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["y" /* MatSlideToggleModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["A" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["t" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["w" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["y" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["x" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["z" /* MatSnackBarModule */],
                 __WEBPACK_IMPORTED_MODULE_7__angular_material__["B" /* MatSortModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["D" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["E" /* MatTabsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["F" /* MatToolbarModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatTooltipModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["E" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["F" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["H" /* MatTooltipModule */],
             ]
         })
     ], AngularMaterialModule);
@@ -278,9 +277,7 @@ module.exports = "\r\n\r\n<div class=\"example-container mat-elevation-z8\">\r\n
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCategoryComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_table__ = __webpack_require__("../../../material/esm5/table.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material_sort__ = __webpack_require__("../../../material/esm5/sort.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -315,7 +312,7 @@ var AdminCategoryComponent = (function () {
     AdminCategoryComponent.prototype.ngOnInit = function () {
     };
     AdminCategoryComponent.prototype.initializeTable = function (categories) {
-        this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material_table__["a" /* MatTableDataSource */](categories);
+        this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["D" /* MatTableDataSource */](categories);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
     };
@@ -339,12 +336,12 @@ var AdminCategoryComponent = (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material_sort__["a" /* MatSort */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material_sort__["a" /* MatSort */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MatSort */])
     ], AdminCategoryComponent.prototype, "sort", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatPaginator */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatPaginator */])
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatPaginator */])
     ], AdminCategoryComponent.prototype, "paginator", void 0);
     AdminCategoryComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
