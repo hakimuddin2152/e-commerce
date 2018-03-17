@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Observable } from 'rxjs/Observable';
 import { CategoryService } from 'app/services/category.service';
 import { ProductService } from './../../../services/product.service';
@@ -11,7 +12,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class AdminProductsComponent implements OnInit {
   categories$:Observable<any>;
-  constructor(private categorieService: CategoryService) { 
+  constructor(private categorieService: CategoryService,private authService: AuthService,) { 
     this.categories$=categorieService.getAll()
   }
   showProductForm:boolean
@@ -36,9 +37,14 @@ export class AdminProductsComponent implements OnInit {
 
    saveCategory(formData){
      console.log(formData)
-    this.categorieService.saveCategory(formData)
-   }
+    this.categorieService.saveCategory(formData).subscribe(data => {
+      if(data) {
+        console.log(data)
+        } 
+   console
+   })
+  }
   ngOnInit() {
   }
 
-}
+} 

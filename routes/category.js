@@ -32,7 +32,36 @@ categoryRoutes.route('/getallcategories').get(function (req, res) {
         res.json(cat);
       }
     });
+    
 }); 
+
+categoryRoutes.route('/updatecategory/:category').put(function (req, res) {
+  let categoryId=req.param.id;
+  if(categoryKey!=null){
+    Category.getCategoryByKey(categoryId,(err,category)=>{
+      if(err)
+        res.send(err)
+      else
+      {
+      category.key=req.body.key;
+      category.title=req.body.title;
+      category.featured=req.body.featured;
+      category.imageUrl=req.body.imageUrl;
+      Category.save(function (err) {
+        if (err)
+            res.send(err);
+
+        res.json({ message: 'Category updated!' });
+    });
+      }
+
+    })
+  }  
+
+  
+});
+
+
 
 module.exports = categoryRoutes;
  

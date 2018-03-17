@@ -17,7 +17,9 @@ module.exports.getAllProducts = function(callback) {
     const query = {category: category}
     Product.find(query, callback);
   }
-  module.exports.addProduct = function(product, callback) {
-    product.save(callback)
+
+  
+  module.exports.getProductById = function(id, callback) {
+    product.findById(callback)
     
   }

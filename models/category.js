@@ -9,10 +9,10 @@ const CategorySchema   = mongoose.Schema({
 });
 const Category=module.exports = mongoose.model('Category', CategorySchema);
 
-/*module.exports.getCategoryByKey = function(id, callback) {
-  User.findById(id, callback);
-}*/
 
+module.exports.getCategoryByKey=function(id,callback){
+  Category.findById(id,callback)
+}
 module.exports.getAllCategories = function(callback) {
   Category.find(callback);
 }

@@ -77,31 +77,38 @@ var AppComponent = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export AngularMaterialModule */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_app_components_products_products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_app_components_products_product_filter_product_filter_component__ = __webpack_require__("../../../../../src/app/components/products/product-filter/product-filter.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_app_components_product_card_product_card_component__ = __webpack_require__("../../../../../src/app/components/product-card/product-card.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_app_services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_app_components_admin_admin_orders_admin_orders_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-orders/admin-orders.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_app_components_admin_admin_products_admin_products_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_cdk_table__ = __webpack_require__("../../../cdk/esm5/table.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__ = __webpack_require__("../../../../../src/app/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__ = __webpack_require__("../../../../../src/app/components/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__ = __webpack_require__("../../../../../src/app/components/profile/profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_app_components_admin_admin_orders_admin_orders_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-orders/admin-orders.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_app_components_admin_admin_products_admin_products_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_home_admin_home_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-home/admin-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_admin_admin_category_admin_category_component__ = __webpack_require__("../../../../../src/app/components/admin/admin-category/admin-category.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_shared_category_list_category_list_component__ = __webpack_require__("../../../../../src/app/components/shared/category-list/category-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_app_components_products_product_filter_product_filter_component__ = __webpack_require__("../../../../../src/app/components/products/product-filter/product-filter.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_app_components_product_card_product_card_component__ = __webpack_require__("../../../../../src/app/components/product-card/product-card.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/module/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_app_components_products_products_component__ = __webpack_require__("../../../../../src/app/components/products/products.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_app_services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -131,15 +138,68 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
+
+
+var AngularMaterialModule = (function () {
+    function AngularMaterialModule() {
+    }
+    AngularMaterialModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_6__angular_cdk_table__["m" /* CdkTableModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["a" /* MatAutocompleteModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["b" /* MatButtonModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MatButtonToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["d" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["e" /* MatCheckboxModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["f" /* MatChipsModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["C" /* MatStepperModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["g" /* MatDatepickerModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["h" /* MatDialogModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["i" /* MatDividerModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["j" /* MatExpansionModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["k" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["l" /* MatIconModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["m" /* MatInputModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["n" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["o" /* MatMenuModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["p" /* MatNativeDateModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["r" /* MatPaginatorModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["s" /* MatProgressBarModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["t" /* MatProgressSpinnerModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["u" /* MatRadioModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["v" /* MatRippleModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["w" /* MatSelectModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["x" /* MatSidenavModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["z" /* MatSliderModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["y" /* MatSlideToggleModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["A" /* MatSnackBarModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["B" /* MatSortModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["D" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["E" /* MatTabsModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["F" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_material__["G" /* MatTooltipModule */],
+            ]
+        })
+    ], AngularMaterialModule);
+    return AngularMaterialModule;
+}());
+
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'products/:category', component: __WEBPACK_IMPORTED_MODULE_16_app_components_products_products_component__["a" /* ProductsComponent */] },
-    { path: 'products', component: __WEBPACK_IMPORTED_MODULE_16_app_components_products_products_component__["a" /* ProductsComponent */] },
-    { path: 'admin/products', component: __WEBPACK_IMPORTED_MODULE_22_app_components_admin_admin_products_admin_products_component__["a" /* AdminProductsComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'products/:category', component: __WEBPACK_IMPORTED_MODULE_26_app_components_products_products_component__["a" /* ProductsComponent */] },
+    { path: 'products', component: __WEBPACK_IMPORTED_MODULE_26_app_components_products_products_component__["a" /* ProductsComponent */] },
+    { path: 'admin', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_home_admin_home_component__["a" /* AdminHomeComponent */] },
+    { path: 'admin/manage-products', component: __WEBPACK_IMPORTED_MODULE_16_app_components_admin_admin_products_admin_products_component__["a" /* AdminProductsComponent */] },
+    { path: 'admin/manage-category', component: __WEBPACK_IMPORTED_MODULE_18__components_admin_admin_category_admin_category_component__["a" /* AdminCategoryComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -147,31 +207,237 @@ var AppModule = (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_21_app_components_admin_admin_orders_admin_orders_component__["a" /* AdminOrdersComponent */],
-                __WEBPACK_IMPORTED_MODULE_22_app_components_admin_admin_products_admin_products_component__["a" /* AdminProductsComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_navbar_navbar_component__["a" /* NavbarComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_16_app_components_products_products_component__["a" /* ProductsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17_app_components_products_product_filter_product_filter_component__["a" /* ProductFilterComponent */],
-                __WEBPACK_IMPORTED_MODULE_18_app_components_product_card_product_card_component__["a" /* ProductCardComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_home_admin_home_component__["a" /* AdminHomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_15_app_components_admin_admin_orders_admin_orders_component__["a" /* AdminOrdersComponent */],
+                __WEBPACK_IMPORTED_MODULE_16_app_components_admin_admin_products_admin_products_component__["a" /* AdminProductsComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_admin_admin_category_admin_category_component__["a" /* AdminCategoryComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__components_navbar_navbar_component__["a" /* NavbarComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_26_app_components_products_products_component__["a" /* ProductsComponent */],
+                __WEBPACK_IMPORTED_MODULE_20_app_components_products_product_filter_product_filter_component__["a" /* ProductFilterComponent */],
+                __WEBPACK_IMPORTED_MODULE_21_app_components_product_card_product_card_component__["a" /* ProductCardComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__components_admin_admin_home_admin_home_component__["a" /* AdminHomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__components_admin_admin_category_admin_category_component__["a" /* AdminCategoryComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__components_shared_category_list_category_list_component__["a" /* CategoryListComponent */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
+                __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
-                __WEBPACK_IMPORTED_MODULE_14_angular2_flash_messages__["FlashMessagesModule"].forRoot()
+                __WEBPACK_IMPORTED_MODULE_24_angular2_flash_messages__["FlashMessagesModule"].forRoot(),
+                AngularMaterialModule,
+                __WEBPACK_IMPORTED_MODULE_6__angular_cdk_table__["m" /* CdkTableModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_12__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_13__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_15__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_19_app_services_product_service__["a" /* ProductService */], __WEBPACK_IMPORTED_MODULE_20_app_services_category_service__["a" /* CategoryService */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_22__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_23__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_27_app_services_product_service__["a" /* ProductService */], __WEBPACK_IMPORTED_MODULE_28_app_services_category_service__["a" /* CategoryService */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-category/admin-category.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".example-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    min-width: 300px;\r\n  }\r\n  \r\n  .mat-table {\r\n    overflow: auto;\r\n    max-height: 500px;\r\n  }\r\n  \r\n  .mat-header-cell.mat-sort-header-sorted {\r\n    color: black;\r\n  }\r\n  ", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-category/admin-category.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n\r\n<div class=\"example-container mat-elevation-z8\">\r\n        <mat-form-field>\r\n                <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n              </mat-form-field>\r\n        <mat-table #table [dataSource]=\"dataSource\" matSort>\r\n      \r\n          <!--- Note that these columns can be defined in any order.\r\n                The actual rendered columns are set as a property on the row definition\" -->\r\n      \r\n          <!-- Position Column -->\r\n          <ng-container matColumnDef=\"key\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Key </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.key}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Name Column -->\r\n          <ng-container matColumnDef=\"title\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.title}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Weight Column -->\r\n          <ng-container matColumnDef=\"featured\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Featured </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.featured}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Symbol Column -->\r\n          <ng-container matColumnDef=\"imageUrl\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Image Url </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.imageUrl}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n          <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\r\n        </mat-table>\r\n        <mat-paginator #paginator\r\n                 [pageSize]=\"5\"\r\n                 [pageSizeOptions]=\"[5, 10, 20]\"\r\n                 [showFirstLastButtons]=\"true\">\r\n  </mat-paginator>\r\n      </div>\r\n\r\n<!-- <div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <a class=\"col-6\" id=\"addCategory\" (click)=\"showForm($event)\">Add new Category</a>\r\n        <a class=\"col-6\" id=\"updateCategory\" (click)=\"showForm($event)\" >Update the existing category</a>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"col-12\">\r\n    <div *ngIf=\"showAddCategoryForm\" >\r\n    <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\r\n        <div class=\"form-group\">\r\n          <label for=\"key\">Key</label>\r\n          <input type=\"text\" [(ngModel)]=\"key\" name=\"key\" \r\n          class=\"form-control\" id=\"key\" name=\"key\" aria-describedby=\"title\" \r\n          placeholder=\"Enter Category Name\">\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"title\">Title</label>\r\n            <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" rows=\"4\" \r\n            class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Description\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"category\">Is Category a featured category?</label>\r\n            <select class=\"form-control\" [(ngModel)]=\"featured\" name=\"featured\" id=\"featured\">\r\n              <option  value=\"true\">True</option>\r\n              <option  value=\"false\">False</option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"imageUrl\">Category Image</label>\r\n            <input type=\"text\" [(ngModel)]=\"imageUrl\" name=\"imageUrl\" rows=\"4\" \r\n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Category Image URL\">\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n      </div>\r\n      </form>\r\n    </div>\r\n    <div *ngIf=\"showUpdateCategoryForm\">\r\n        <div class=\"form-group\">\r\n            \r\n            <category-list></category-list>\r\n        \r\n        </div>   \r\n        \r\n    </div>\r\n</div> -->"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-category/admin-category.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCategoryComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material_table__ = __webpack_require__("../../../material/esm5/table.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material_sort__ = __webpack_require__("../../../material/esm5/sort.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AdminCategoryComponent = (function () {
+    function AdminCategoryComponent(categoryService) {
+        var _this = this;
+        this.categoryService = categoryService;
+        this.showAddCategoryForm = false;
+        this.showUpdateCategoryForm = false;
+        // tableResource: DataTableResource<Category>;
+        // items: Category[] = [];
+        // itemCount: number;
+        this.displayedColumns = ['key', 'title', 'featured', 'imageUrl'];
+        this.subscription = this.categoryService.getAll()
+            .subscribe(function (category) {
+            _this.categories = category;
+            _this.initializeTable(_this.categories);
+        });
+    }
+    AdminCategoryComponent.prototype.ngOnInit = function () {
+    };
+    AdminCategoryComponent.prototype.initializeTable = function (categories) {
+        this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material_table__["a" /* MatTableDataSource */](categories);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+    };
+    AdminCategoryComponent.prototype.applyFilter = function (filterValue) {
+        filterValue = filterValue.trim(); // Remove whitespace
+        filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+        this.dataSource.filter = filterValue;
+    };
+    AdminCategoryComponent.prototype.showForm = function (event) {
+        var currentForm = event.srcElement.attributes.id.nodeValue;
+        console.log(currentForm);
+        if (currentForm == "addCategory") {
+            console.log(currentForm);
+            this.showAddCategoryForm = true;
+            this.showUpdateCategoryForm = false;
+        }
+        else if (currentForm == "updateCategory") {
+            console.log(currentForm);
+            this.showAddCategoryForm = false;
+            this.showUpdateCategoryForm = true;
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material_sort__["a" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material_sort__["a" /* MatSort */])
+    ], AdminCategoryComponent.prototype, "sort", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_4__angular_material__["q" /* MatPaginator */])
+    ], AdminCategoryComponent.prototype, "paginator", void 0);
+    AdminCategoryComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'app-admin-category',
+            template: __webpack_require__("../../../../../src/app/components/admin/admin-category/admin-category.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/admin/admin-category/admin-category.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_category_service__["a" /* CategoryService */]])
+    ], AdminCategoryComponent);
+    return AdminCategoryComponent;
+}());
+
+var ELEMENT_DATA = [
+    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
+    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
+    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
+    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
+    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
+    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
+    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
+    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+    { position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na' },
+    { position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg' },
+    { position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al' },
+    { position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si' },
+    { position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P' },
+    { position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S' },
+    { position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl' },
+    { position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar' },
+    { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
+    { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
+];
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-home/admin-home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "a:hover{\r\n    cursor: pointer\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-home/admin-home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-12\">\n  <ul class=\"list-group\">\n      <li  class=\"list-group-item\">\n          <!-- <li class=\"nav-item\"> -->\n          <a routerLink=\"manage-products\" class=\"nav-link\" id=\"productLink\" >Manage Product</a>\n        </li>\n\n      <li  class=\"list-group-item\">\n        <!-- <li class=\"nav-item\"> -->\n        <a routerLink=\"manage-category\" class=\"nav-link\" id=\"categoryLink\" >Manage Category</a>\n        \n      </li>\n             </ul>\n\n    </div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/admin/admin-home/admin-home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminHomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AdminHomeComponent = (function () {
+    function AdminHomeComponent() {
+    }
+    AdminHomeComponent.prototype.ngOnInit = function () {
+    };
+    AdminHomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-admin-home',
+            template: __webpack_require__("../../../../../src/app/components/admin/admin-home/admin-home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/admin/admin-home/admin-home.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AdminHomeComponent);
+    return AdminHomeComponent;
 }());
 
 
@@ -260,7 +526,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin/admin-products/admin-products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-3\">\n      <ul class=\"list-group\">\n          <li  class=\"list-group-item\">\n              <!-- <li class=\"nav-item\"> -->\n              <a class=\"nav-link\" id=\"productLink\" (click)=\"showForm($event)\">Add Product</a>\n            </li>\n\n          <li  class=\"list-group-item\">\n            <!-- <li class=\"nav-item\"> -->\n            <a class=\"nav-link\" id=\"categoryLink\" (click)=\"showForm($event)\">Add Category</a>\n          </li>\n                 </ul>\n\n        </div>\n\n        <div *ngIf=\"showCategoryForm\" class=\"col-9\">\n            <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\n                <div class=\"form-group\">\n                  <label for=\"name\">Key</label>\n                  <input type=\"text\" ngModel name=\"key\" \n                  class=\"form-control\" id=\"name\" aria-describedby=\"title\" \n                  placeholder=\"Enter Category Name\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"description\">Title</label>\n                    <input type=\"text\" ngModel name=\"title\" rows=\"4\" class=\"form-control\" id=\"description\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Description\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"category\">Is Category a featured category?</label>\n                    <select class=\"form-control\" ngModel name=\"featured\" id=\"featured\">\n                      <option  value=\"true\">True</option>\n                      <option  value=\"false\">False</option>\n                    </select>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"description\">Category Image</label>\n                    <input type=\"text\" ngModel name=\"imageUrl\" rows=\"4\" \n                    class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Category Image URL\">\n                  </div>\n        \n                  <div class=\"form-group\">\n                <button type=\"save\" class=\"btn btn-primary\">Save</button>\n              </div>\n              </form>\n        \n        \n        </div>\n\n<div *ngIf=\"showProductForm\" class=\"col-9\">\n    <form #f=\"ngForm\" (ngSubmit)=\"saveProduct(f.value)\">\n        <div class=\"form-group\">\n          <label for=\"title\">Title</label>\n          <input type=\"text\" ngModel name=\"title\" \n          class=\"form-control\" id=\"title\" aria-describedby=\"title\" \n          placeholder=\"Enter title\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"description\">Description</label>\n            <input type=\"text\" ngModel name=\"description\" rows=\"4\" class=\"form-control\" id=\"description\" aria-describedby=\"Description\" \n            placeholder=\"Enter Description\">\n          </div>\n\n        <div class=\"form-group\">\n          <label for=\"category\">Select Category</label>\n          <select class=\"form-control\" ngModel name=\"category\" id=\"category\">\n            <option *ngFor=\"let c of categories$ | async\"  [value]=\"c.key\">{{c.title }}</option>\n          </select>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"price\">Price</label>\n            <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\" \n            aria-describedby=\"Price\" \n            placeholder=\"Enter price\">\n          </div>\n\n        <div class=\"form-group\">\n            <label for=\"imageUrl\">Image Url</label>\n            <input type=\"text\" ngModel name=\"imageUrl\" \n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Image Url\" \n            placeholder=\"Enter Image Url\">\n          </div>\n          <div class=\"form-group\">\n        <button type=\"save\" class=\"btn btn-primary\">Save</button>\n      </div>\n      </form>\n\n\n</div>   \n</div>"
+module.exports = "<div class=\"row\">\n  \n\n        <div *ngIf=\"showCategoryForm\" class=\"col-9\">\n            <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\n                <div class=\"form-group\">\n                  <label for=\"key\">Key</label>\n                  <input type=\"text\" [(ngModel)]=\"key\" name=\"key\" \n                  class=\"form-control\" id=\"key\" name=\"key\" aria-describedby=\"title\" \n                  placeholder=\"Enter Category Name\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"title\">Title</label>\n                    <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" rows=\"4\" \n                    class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Description\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"category\">Is Category a featured category?</label>\n                    <select class=\"form-control\" [(ngModel)]=\"featured\" name=\"featured\" id=\"featured\">\n                      <option  value=\"true\">True</option>\n                      <option  value=\"false\">False</option>\n                    </select>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"imageUrl\">Category Image</label>\n                    <input type=\"text\" [(ngModel)]=\"imageUrl\" name=\"imageUrl\" rows=\"4\" \n                    class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Category Image URL\">\n                  </div>\n        \n                  <div class=\"form-group\">\n                <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n              </div>\n              </form>\n        \n        \n        </div>\n\n<div *ngIf=\"showProductForm\" class=\"col-9\">\n    <form #f=\"ngForm\" (ngSubmit)=\"saveProduct(f.value)\">\n        <div class=\"form-group\">\n          <label for=\"title\">Title</label>\n          <input type=\"text\" ngModel name=\"title\" \n          class=\"form-control\" id=\"title\" aria-describedby=\"title\" \n          placeholder=\"Enter title\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"description\">Description</label>\n            <input type=\"text\" ngModel name=\"description\" rows=\"4\" class=\"form-control\" id=\"description\" aria-describedby=\"Description\" \n            placeholder=\"Enter Description\">\n          </div>\n\n        <div class=\"form-group\">\n          <label for=\"category\">Select Category</label>\n          <select class=\"form-control\" ngModel name=\"category\" id=\"category\">\n            <option *ngFor=\"let c of categories$ | async\"  [value]=\"c.key\">{{c.title }}</option>\n          </select>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"price\">Price</label>\n            <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\" \n            aria-describedby=\"Price\" \n            placeholder=\"Enter price\">\n          </div>\n\n        <div class=\"form-group\">\n            <label for=\"imageUrl\">Image Url</label>\n            <input type=\"text\" ngModel name=\"imageUrl\" \n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Image Url\" \n            placeholder=\"Enter Image Url\">\n          </div>\n          <div class=\"form-group\">\n        <button type=\"save\" class=\"btn btn-primary\">Save</button>\n      </div>\n      </form>\n\n\n</div>   \n</div>"
 
 /***/ }),
 
@@ -269,8 +535,9 @@ module.exports = "<div class=\"row\">\n  <div class=\"col-3\">\n      <ul class=
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminProductsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -282,9 +549,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AdminProductsComponent = (function () {
-    function AdminProductsComponent(categorieService) {
+    function AdminProductsComponent(categorieService, authService) {
         this.categorieService = categorieService;
+        this.authService = authService;
         this.showCategoryForm = true;
         this.categories$ = categorieService.getAll();
     }
@@ -303,17 +572,22 @@ var AdminProductsComponent = (function () {
     };
     AdminProductsComponent.prototype.saveCategory = function (formData) {
         console.log(formData);
-        this.categorieService.saveCategory(formData);
+        this.categorieService.saveCategory(formData).subscribe(function (data) {
+            if (data) {
+                console.log(data);
+            }
+            console;
+        });
     };
     AdminProductsComponent.prototype.ngOnInit = function () {
     };
     AdminProductsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-admin-products',
             template: __webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_app_services_category_service__["a" /* CategoryService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_app_services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
     ], AdminProductsComponent);
     return AdminProductsComponent;
 }());
@@ -959,7 +1233,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<h2 class=\"page-header\">Register</h2>\n<form (submit)=\"onRegisterSubmit()\" >\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" class=\"form-control\" id=\"name\" placeholder=\"Enter Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Enter Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"email\">Email</label>\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"password\">Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"password\" placeholder=\" Enter Password\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n</div>\n"
+module.exports = "<div>\n<h2 class=\"page-header\">Register</h2>\n<form (submit)=\"onRegisterSubmit()\" >\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" [(ngModel)]=\"name\" name=\"name\" \n    class=\"form-control\" id=\"name\" placeholder=\"Enter Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Enter Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"email\">Email</label>\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"email\" aria-describedby=\"emailHelp\" placeholder=\"Enter Email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"password\">Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"password\" placeholder=\" Enter Password\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Submit\">\n</form>\n</div>\n"
 
 /***/ }),
 
@@ -1043,6 +1317,75 @@ var RegisterComponent = (function () {
             __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]])
     ], RegisterComponent);
     return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/shared/category-list/category-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/shared/category-list/category-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<select class=\"form-control\" name=\"category\" id=\"category\">\n    <option *ngFor=\"let c of categories$ | async\"  [value]=\"c.key\">{{c.title }}</option>\n  </select>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/shared/category-list/category-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CategoryListComponent = (function () {
+    function CategoryListComponent(categoryService) {
+        this.categories$ = categoryService.getAll();
+    }
+    CategoryListComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])('category'),
+        __metadata("design:type", Object)
+    ], CategoryListComponent.prototype, "category", void 0);
+    CategoryListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: 'category-list',
+            template: __webpack_require__("../../../../../src/app/components/shared/category-list/category-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/components/shared/category-list/category-list.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_app_services_category_service__["a" /* CategoryService */]])
+    ], CategoryListComponent);
+    return CategoryListComponent;
 }());
 
 
@@ -1274,20 +1617,22 @@ var CategoryService = (function () {
         this.http = http;
     }
     CategoryService.prototype.getAll = function () {
-        var url = "category/getallcategories";
+        var url = "http://localhost:8080/category/getallcategories";
         //return this.db.list('/categories',).valueChanges();
-        return this.http.get(url).map(function (response) {
-            var body = response.json();
-            return body || {};
+        return this.http.get(url)
+            .map(function (response) {
+            var res = response.json();
+            var categories = response.json();
+            return categories;
         });
     };
     CategoryService.prototype.saveCategory = function (category) {
         console.log(category);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var url = "category/addcategory";
+        var url = "http://localhost:8080/category/addcategory";
         return this.http.post(url, category, { headers: headers })
-            .map(function (response) { return response.json(); });
+            .map(function (res) { return res.json(); });
     };
     CategoryService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -1347,7 +1692,7 @@ var ProductService = (function () {
         return null;
     };
     ProductService.prototype.getProductByCategory = function (categoryname) {
-        var url = "product/getproductsbycategory/" + categoryname;
+        var url = "http://localhost:8080/product/getproductsbycategory/" + categoryname;
         //return this.db.list('/categories',).valueChanges();
         return this.http.get(url).map(function (response) {
             var body = response.json();

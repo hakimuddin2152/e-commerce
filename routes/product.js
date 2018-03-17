@@ -47,7 +47,7 @@ productRoutes.route('/getproductsbycategory/:category').get(function (req, res) 
 
 productRoutes.route('/updateProduct/:product_id').put(function (req, res) {
 console.log('update method')
-  Product.findById(req.params.product_id, function (err, prod) {
+  Product.getProductById(req.params.product_id, function (err, prod) {
       if (err) {
           res.send(err);
       }
