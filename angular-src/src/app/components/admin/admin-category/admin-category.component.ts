@@ -1,10 +1,10 @@
 import { CategoryService } from './../../../services/category.service';
 import { Category } from './../../../model/category';
 import { Component, OnInit } from '@angular/core';
-import { DataTableResource } from 'angular-4-data-table';
+
 import { Subscription } from 'rxjs/Subscription';
-import { MatTableModule, MatTableDataSource} from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+import { MatTableModule, MatTableDataSource} from '@angular/material';
+import { MatSort } from '@angular/material';
 import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material';
 @Component({

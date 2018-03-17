@@ -54,7 +54,6 @@ import { AdminProductsComponent } from 'app/components/admin/admin-products/admi
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { AdminCategoryComponent } from './components/admin/admin-category/admin-category.component';
 import { CategoryListComponent } from './components/shared/category-list/category-list.component';
-import { DataTableModule } from 'angular-4-data-table';
 import {ProductFilterComponent} from 'app/components/products/product-filter/product-filter.component'
 import { ProductCardComponent } from 'app/components/product-card/product-card.component';
 
@@ -90,7 +89,6 @@ import { CategoryService } from 'app/services/category.service';
     MatNativeDateModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule,
     MatRadioModule,
     MatRippleModule,
     MatSelectModule,
