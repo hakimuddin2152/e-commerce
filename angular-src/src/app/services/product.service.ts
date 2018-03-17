@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
-
+const config=require('./../../../../config/database.js')
 @Injectable()
 export class ProductService {
-
+domain=config.domain;
   constructor(private http:Http) {
 
    }
@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   getAll() : Observable<Response>{
-    let url="http://localhost:8080/product/getallproducts";
+    let url=this.domain+"product/getallproducts";
    //return this.db.list('/categories',).valueChanges();
    return this.http.get(url).map(
      response => {
@@ -44,7 +44,7 @@ export class ProductService {
   }
 
   getProductByCategory(categoryname):Observable<Response> { 
-    let url="http://localhost:8080/product/getproductsbycategory/"+categoryname;
+    let url=this.domain+"product/getproductsbycategory/"+categoryname;
     //return this.db.list('/categories',).valueChanges();
     return this.http.get(url).map(
       response => {

@@ -1,5 +1,21 @@
 webpackJsonp(["main"],{
 
+/***/ "../../../../../../config/database.js":
+/***/ (function(module, exports) {
+
+module.exports = {
+  // configure the code below with your username, password and mlab database information
+  database: 'mongodb://hakim:hakim123@ds145208.mlab.com:45208/productdb-shoppingmart',
+  //mongodb://<dbuser>:<dbpassword>@ds145208.mlab.com:45208/productdb-shoppingmart
+  //database: 'mongodb://localhost:27017/meanauth',    //dev
+  secret: 'yoursecret',
+  //domain:'http://localhost:8080/'
+  domain:''
+}
+
+
+/***/ }),
+
 /***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
 
@@ -253,7 +269,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".example-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    min-width: 300px;\r\n  }\r\n  \r\n  .mat-table {\r\n    overflow: auto;\r\n    max-height: 500px;\r\n  }\r\n  \r\n  .mat-header-cell.mat-sort-header-sorted {\r\n    color: black;\r\n  }\r\n  ", ""]);
+exports.push([module.i, ".example-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    min-width: 300px;\r\n  }\r\n  \r\n  .mat-table {\r\n    overflow: auto;\r\n    max-height: 500px;\r\n  }\r\n  \r\n  .mat-header-cell.mat-sort-header-sorted {\r\n    color: black;\r\n  }\r\n  .nav-link{\r\n    margin:15px;\r\n    background-color: #ffeb3b52;\r\n    cursor: pointer;\r\n    color: purple !important;\r\n  }\r\n  ", ""]);
 
 // exports
 
@@ -266,7 +282,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin/admin-category/admin-category.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\n<div class=\"example-container mat-elevation-z8\">\r\n        <mat-form-field>\r\n                <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n              </mat-form-field>\r\n        <mat-table #table [dataSource]=\"dataSource\" matSort>\r\n      \r\n          <!--- Note that these columns can be defined in any order.\r\n                The actual rendered columns are set as a property on the row definition\" -->\r\n      \r\n          <!-- Position Column -->\r\n          <ng-container matColumnDef=\"key\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Key </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.key}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Name Column -->\r\n          <ng-container matColumnDef=\"title\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.title}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Weight Column -->\r\n          <ng-container matColumnDef=\"featured\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Featured </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.featured}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Symbol Column -->\r\n          <ng-container matColumnDef=\"imageUrl\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Image Url </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.imageUrl}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n          <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\r\n        </mat-table>\r\n        <mat-paginator #paginator\r\n                 [pageSize]=\"5\"\r\n                 [pageSizeOptions]=\"[5, 10, 20]\"\r\n                 [showFirstLastButtons]=\"true\">\r\n  </mat-paginator>\r\n      </div>\r\n\r\n<!-- <div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <a class=\"col-6\" id=\"addCategory\" (click)=\"showForm($event)\">Add new Category</a>\r\n        <a class=\"col-6\" id=\"updateCategory\" (click)=\"showForm($event)\" >Update the existing category</a>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"col-12\">\r\n    <div *ngIf=\"showAddCategoryForm\" >\r\n    <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\r\n        <div class=\"form-group\">\r\n          <label for=\"key\">Key</label>\r\n          <input type=\"text\" [(ngModel)]=\"key\" name=\"key\" \r\n          class=\"form-control\" id=\"key\" name=\"key\" aria-describedby=\"title\" \r\n          placeholder=\"Enter Category Name\">\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"title\">Title</label>\r\n            <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" rows=\"4\" \r\n            class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Description\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"category\">Is Category a featured category?</label>\r\n            <select class=\"form-control\" [(ngModel)]=\"featured\" name=\"featured\" id=\"featured\">\r\n              <option  value=\"true\">True</option>\r\n              <option  value=\"false\">False</option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"imageUrl\">Category Image</label>\r\n            <input type=\"text\" [(ngModel)]=\"imageUrl\" name=\"imageUrl\" rows=\"4\" \r\n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Category Image URL\">\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n      </div>\r\n      </form>\r\n    </div>\r\n    <div *ngIf=\"showUpdateCategoryForm\">\r\n        <div class=\"form-group\">\r\n            \r\n            <category-list></category-list>\r\n        \r\n        </div>   \r\n        \r\n    </div>\r\n</div> -->"
+module.exports = "<div class=\"row\">\r\n  <a class=\"nav-link list-group-item\" (click)=\"showForm()\" [style.display]=\"!isShowForm ?'block':'none'\">Add new Category</a>\r\n</div>\r\n<div class=\"row\">\r\n    <div *ngIf=\"isShowForm\" class=\"col-6\">\r\n        <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\r\n            <div class=\"form-group\">\r\n              <label for=\"key\">Key</label>\r\n              <input type=\"text\" [(ngModel)]=\"category.key\"  \r\n              class=\"form-control\" id=\"key\" name=\"category.key\" aria-describedby=\"title\" \r\n              placeholder=\"Enter Category Name\">\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label for=\"title\">Title</label>\r\n                <input type=\"text\" [(ngModel)]=\"category.title\" name=\"category.title\" rows=\"4\" \r\n                class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \r\n                placeholder=\"Enter Description\">\r\n              </div>\r\n              <div class=\"form-group\">\r\n                <label for=\"category\">Is Category a featured category?</label>\r\n                <select class=\"form-control\" [(ngModel)]=\"category.featured\" name=\"category.featured\" id=\"featured\">\r\n                  <option  value=\"true\">True</option>\r\n                  <option  value=\"false\">False</option>\r\n                </select>\r\n              </div>\r\n              <div class=\"form-group\">\r\n                <label for=\"imageUrl\">Category Image</label>\r\n                <input type=\"text\" [(ngModel)]=\"category.imageUrl\" name=\"category.imageUrl\" rows=\"4\" \r\n                class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \r\n                placeholder=\"Enter Category Image URL\">\r\n              </div>\r\n    \r\n              <div class=\"form-group\">\r\n                <button type=\"submit\" class=\"form-control offset-2 col-6 btn btn-primary\">Save Changes</button>\r\n              </div>\r\n              \r\n    \r\n          </form>\r\n    \r\n    \r\n    </div>\r\n    \r\n</div>\r\n\r\n\r\n<div class=\"example-container mat-elevation-z8\">\r\n        <mat-form-field>\r\n                <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n              </mat-form-field>\r\n        <mat-table #table [dataSource]=\"dataSource\" matSort>\r\n      \r\n          <!--- Note that these columns can be defined in any order.\r\n                The actual rendered columns are set as a property on the row definition\" -->\r\n      \r\n          <!-- Position Column -->\r\n          <ng-container matColumnDef=\"key\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Key </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.key}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Title Column -->\r\n          <ng-container matColumnDef=\"title\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.title}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!-- Featured Column -->\r\n          <ng-container matColumnDef=\"Featured\">\r\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Featured </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\"> {{element.featured}} </mat-cell>\r\n          </ng-container>\r\n      \r\n          <!--Image Url Column -->\r\n          <ng-container matColumnDef=\"imageUrl\">\r\n            <mat-header-cell *matHeaderCellDef> Image Url </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\" > {{element.imageUrl}}</mat-cell>\r\n          </ng-container>\r\n\r\n          <ng-container matColumnDef=\"Update\">\r\n            <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\">\r\n              <a (click)=\"showForm(element)\" class=\"nav-link\" >Edit</a>  </mat-cell>\r\n          </ng-container>\r\n\r\n          <ng-container matColumnDef=\"Delete\">\r\n            <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>\r\n            <mat-cell *matCellDef=\"let element\">\r\n              <a (click)=\"deleteCategory(element._id)\" class=\"nav-link\" >Delete</a>  </mat-cell>\r\n          </ng-container>\r\n      \r\n          <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n          <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\r\n        </mat-table>\r\n        <mat-paginator #paginator\r\n                 [pageSize]=\"10\"\r\n                 [pageSizeOptions]=\"[5, 10, 20]\"\r\n                 [showFirstLastButtons]=\"true\">\r\n  </mat-paginator>\r\n      </div>\r\n\r\n<!-- <div class=\"row\">\r\n    <div class=\"col-12\">\r\n        <a class=\"col-6\" id=\"addCategory\" (click)=\"showForm($event)\">Add new Category</a>\r\n        <a class=\"col-6\" id=\"updateCategory\" (click)=\"showForm($event)\" >Update the existing category</a>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"col-12\">\r\n    <div *ngIf=\"showAddCategoryForm\" >\r\n    <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\r\n        <div class=\"form-group\">\r\n          <label for=\"key\">Key</label>\r\n          <input type=\"text\" [(ngModel)]=\"key\" name=\"key\" \r\n          class=\"form-control\" id=\"key\" name=\"key\" aria-describedby=\"title\" \r\n          placeholder=\"Enter Category Name\">\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"title\">Title</label>\r\n            <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" rows=\"4\" \r\n            class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Description\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"category\">Is Category a featured category?</label>\r\n            <select class=\"form-control\" [(ngModel)]=\"featured\" name=\"featured\" id=\"featured\">\r\n              <option  value=\"true\">True</option>\r\n              <option  value=\"false\">False</option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"imageUrl\">Category Image</label>\r\n            <input type=\"text\" [(ngModel)]=\"imageUrl\" name=\"imageUrl\" rows=\"4\" \r\n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \r\n            placeholder=\"Enter Category Image URL\">\r\n          </div>\r\n\r\n          <div class=\"form-group\">\r\n        <button type=\"submit\" class=\"btn btn-primary\">Save</button>\r\n      </div>\r\n      </form>\r\n    </div>\r\n    <div *ngIf=\"showUpdateCategoryForm\">\r\n        <div class=\"form-group\">\r\n            \r\n            <category-list></category-list>\r\n        \r\n        </div>   \r\n        \r\n    </div>\r\n</div> -->"
 
 /***/ }),
 
@@ -302,10 +318,11 @@ var AdminCategoryComponent = (function () {
         // tableResource: DataTableResource<Category>;
         // items: Category[] = [];
         // itemCount: number;
-        this.displayedColumns = ['key', 'title', 'featured', 'imageUrl'];
+        this.displayedColumns = ['key', 'title', 'Featured', 'imageUrl', 'Update', 'Delete'];
+        this.isShowForm = false;
         this.subscription = this.categoryService.getAll()
-            .subscribe(function (category) {
-            _this.categories = category;
+            .subscribe(function (categoryList) {
+            _this.categories = categoryList;
             _this.initializeTable(_this.categories);
         });
     }
@@ -321,19 +338,47 @@ var AdminCategoryComponent = (function () {
         filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
         this.dataSource.filter = filterValue;
     };
-    AdminCategoryComponent.prototype.showForm = function (event) {
-        var currentForm = event.srcElement.attributes.id.nodeValue;
-        console.log(currentForm);
-        if (currentForm == "addCategory") {
-            console.log(currentForm);
-            this.showAddCategoryForm = true;
-            this.showUpdateCategoryForm = false;
+    AdminCategoryComponent.prototype.showForm = function (element) {
+        if (element == undefined) {
+            this.category = {
+                _id: '',
+                key: '',
+                title: '',
+                featured: '',
+                imageUrl: ''
+            };
+            console.log(this.category);
         }
-        else if (currentForm == "updateCategory") {
-            console.log(currentForm);
-            this.showAddCategoryForm = false;
-            this.showUpdateCategoryForm = true;
+        else {
+            this.category = {
+                _id: element._id,
+                key: element.key,
+                title: element.title,
+                featured: element.featured,
+                imageUrl: element.imageUrl
+            };
         }
+        // }
+        console.log(element);
+        this.isShowForm = !this.isShowForm;
+    };
+    AdminCategoryComponent.prototype.saveCategory = function (a) {
+        this.isShowForm = false;
+        console.log(a);
+        console.log(this.category);
+        this.categoryService.saveCategory(this.category).subscribe(function (data) {
+            if (data) {
+                console.log(data);
+            }
+        });
+    };
+    AdminCategoryComponent.prototype.deleteCategory = function (categoryId) {
+        console.log(categoryId);
+        this.categoryService.deleteCategory(categoryId).subscribe(function (data) {
+            if (data) {
+                console.log(data);
+            }
+        });
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MatSort */]),
@@ -354,28 +399,6 @@ var AdminCategoryComponent = (function () {
     return AdminCategoryComponent;
 }());
 
-var ELEMENT_DATA = [
-    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-    { position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na' },
-    { position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg' },
-    { position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al' },
-    { position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si' },
-    { position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P' },
-    { position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S' },
-    { position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl' },
-    { position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar' },
-    { position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K' },
-    { position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca' },
-];
 
 
 /***/ }),
@@ -814,7 +837,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".nav-link{\r\n    font-size:18px;\r\n}\r\n/* .fixed-top{\r\n    height: 70px;\r\n} */\r\n.bg-light{\r\n    background-color: #d4d5d6 !important \r\n}", ""]);
+exports.push([module.i, ".nav-link{\r\n    font-size:18px;\r\n}\r\n/* .fixed-top{\r\n    height: 70px;\r\n} */\r\n.bg-light{\r\n    background-color: #6a1f77 !important \r\n}\r\n.navbar-light .navbar-nav .nav-link{\r\n    color:rgba(255, 193, 59, 0.91)\r\n}\r\n.navbar-light .navbar-toggler-icon{\r\n    background-image: url(\"data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(251, 193, 59, 0.91)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='20' d='M4 7h22M4 15h22M4 23h22'/></svg>\")\r\n}", ""]);
 
 // exports
 
@@ -1609,12 +1632,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+var config = __webpack_require__("../../../../../../config/database.js");
 var CategoryService = (function () {
     function CategoryService(http) {
         this.http = http;
+        this.domain = config.domain;
     }
     CategoryService.prototype.getAll = function () {
-        var url = "http://localhost:8080/category/getallcategories";
+        var url = this.domain + "category/getallcategories";
         //return this.db.list('/categories',).valueChanges();
         return this.http.get(url)
             .map(function (response) {
@@ -1627,8 +1652,16 @@ var CategoryService = (function () {
         console.log(category);
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var url = "http://localhost:8080/category/addcategory";
+        var url = this.domain + "category/addcategory";
         return this.http.post(url, category, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    CategoryService.prototype.deleteCategory = function (categoryKey) {
+        console.log(categoryKey);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var url = this.domain + "category/deletecategory/" + categoryKey;
+        return this.http.delete(url, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     CategoryService = __decorate([
@@ -1660,9 +1693,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+var config = __webpack_require__("../../../../../../config/database.js");
 var ProductService = (function () {
     function ProductService(http) {
         this.http = http;
+        this.domain = config.domain;
     }
     ProductService.prototype.getCategories = function () {
         //return this.db.list('/categories').valueChanges();
@@ -1675,7 +1710,7 @@ var ProductService = (function () {
         // return this.db.list('/products').push(product);
     };
     ProductService.prototype.getAll = function () {
-        var url = "http://localhost:8080/product/getallproducts";
+        var url = this.domain + "product/getallproducts";
         //return this.db.list('/categories',).valueChanges();
         return this.http.get(url).map(function (response) {
             var body = response.json();
@@ -1689,7 +1724,7 @@ var ProductService = (function () {
         return null;
     };
     ProductService.prototype.getProductByCategory = function (categoryname) {
-        var url = "http://localhost:8080/product/getproductsbycategory/" + categoryname;
+        var url = this.domain + "product/getproductsbycategory/" + categoryname;
         //return this.db.list('/categories',).valueChanges();
         return this.http.get(url).map(function (response) {
             var body = response.json();

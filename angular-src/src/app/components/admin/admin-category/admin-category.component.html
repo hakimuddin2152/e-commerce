@@ -1,3 +1,46 @@
+<div class="row">
+  <a class="nav-link list-group-item" (click)="showForm()" [style.display]="!isShowForm ?'block':'none'">Add new Category</a>
+</div>
+<div class="row">
+    <div *ngIf="isShowForm" class="col-6">
+        <form #f="ngForm" (ngSubmit)="saveCategory(f.value)">
+            <div class="form-group">
+              <label for="key">Key</label>
+              <input type="text" [(ngModel)]="category.key"  
+              class="form-control" id="key" name="category.key" aria-describedby="title" 
+              placeholder="Enter Category Name">
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" [(ngModel)]="category.title" name="category.title" rows="4" 
+                class="form-control" id="title" aria-describedby="Description" 
+                placeholder="Enter Description">
+              </div>
+              <div class="form-group">
+                <label for="category">Is Category a featured category?</label>
+                <select class="form-control" [(ngModel)]="category.featured" name="category.featured" id="featured">
+                  <option  value="true">True</option>
+                  <option  value="false">False</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="imageUrl">Category Image</label>
+                <input type="text" [(ngModel)]="category.imageUrl" name="category.imageUrl" rows="4" 
+                class="form-control" id="imageUrl" aria-describedby="Description" 
+                placeholder="Enter Category Image URL">
+              </div>
+    
+              <div class="form-group">
+                <button type="submit" class="form-control offset-2 col-6 btn btn-primary">Save Changes</button>
+              </div>
+              
+    
+          </form>
+    
+    
+    </div>
+    
+</div>
 
 
 <div class="example-container mat-elevation-z8">
@@ -15,29 +58,41 @@
             <mat-cell *matCellDef="let element"> {{element.key}} </mat-cell>
           </ng-container>
       
-          <!-- Name Column -->
+          <!-- Title Column -->
           <ng-container matColumnDef="title">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
           </ng-container>
       
-          <!-- Weight Column -->
-          <ng-container matColumnDef="featured">
+          <!-- Featured Column -->
+          <ng-container matColumnDef="Featured">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Featured </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.featured}} </mat-cell>
           </ng-container>
       
-          <!-- Symbol Column -->
+          <!--Image Url Column -->
           <ng-container matColumnDef="imageUrl">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Image Url </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.imageUrl}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Image Url </mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.imageUrl}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Update">
+            <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <a (click)="showForm(element)" class="nav-link" >Edit</a>  </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Delete">
+            <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <a (click)="deleteCategory(element._id)" class="nav-link" >Delete</a>  </mat-cell>
           </ng-container>
       
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
         <mat-paginator #paginator
-                 [pageSize]="5"
+                 [pageSize]="10"
                  [pageSizeOptions]="[5, 10, 20]"
                  [showFirstLastButtons]="true">
   </mat-paginator>

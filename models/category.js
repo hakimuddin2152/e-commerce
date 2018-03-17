@@ -19,7 +19,11 @@ module.exports.getAllCategories = function(callback) {
 
 module.exports.addCategory = function(category, callback) {
   category.save(callback)
-  
+ }
+
+module.exports.deleteCategory=function(key,callback){
+  const query = {_id: key}
+  Category.deleteOne(query,callback)
 }
 
 

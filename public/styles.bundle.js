@@ -36,7 +36,7 @@ exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":fa
 exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":false,\"importLoaders\":1}!../../../../postcss-loader/lib/index.js?{\"ident\":\"postcss\",\"sourceMap\":false}!../../../material/prebuilt-themes/deeppurple-amber.css"), "");
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n   margin-top:70px;\n }\n @media(max-width: 768px){\n   body{\n     margin-top:20px;\n    }\n }\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody{\n   margin-top:70px;\n }\n @media(max-width: 768px){\n   body{\n     margin-top:20px;\n    }\n }\n .btn-primary {\n   background-color: #6a1f77;\n   border-color: #6a1f77;\n }\n .list-group-item.active{\n  background-color: #6a1f77;\n  border-color: #6a1f77;\n }\n", ""]);
 
 // exports
 

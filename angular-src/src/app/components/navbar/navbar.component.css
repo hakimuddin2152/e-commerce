@@ -5,5 +5,11 @@
     height: 70px;
 } */
 .bg-light{
-    background-color: #d4d5d6 !important 
+    background-color: #6a1f77 !important 
+}
+.navbar-light .navbar-nav .nav-link{
+    color:rgba(255, 193, 59, 0.91)
+}
+.navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(251, 193, 59, 0.91)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='20' d='M4 7h22M4 15h22M4 23h22'/></svg>")
 }

@@ -2,7 +2,7 @@ export interface Category {
   _id:string;
   title: string;
   key:string;
-  featured: number;
+  featured: string;
   imageUrl: string;
  
 }

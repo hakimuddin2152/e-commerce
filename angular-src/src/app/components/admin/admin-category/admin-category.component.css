@@ -12,4 +12,10 @@
   .mat-header-cell.mat-sort-header-sorted {
     color: black;
   }
+  .nav-link{
+    margin:15px;
+    background-color: #ffeb3b52;
+    cursor: pointer;
+    color: purple !important;
+  }
   
