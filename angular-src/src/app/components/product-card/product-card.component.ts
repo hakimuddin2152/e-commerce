@@ -13,6 +13,8 @@ export class ProductCardComponent {
   @Input('show-actions') showActions = true;
   @Input('shopping-cart') shoppingCart: ShoppingCart; 
 
+  relativePath='./../../../../assets/img/'
+  
   constructor(
     //private cartService: ShoppingCartService
   ) { }

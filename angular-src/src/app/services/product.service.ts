@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import { Http,Headers } from '@angular/http';
+import { Product } from 'app/model/product';
 const config=require('./../../../../config/database.js')
 @Injectable()
 export class ProductService {
@@ -15,8 +16,15 @@ domain=config.domain;
   }
    
    saveProduct(product){
-     //return this.db.list('/products').push(product)
-   }
+    console.log(product)
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let url=this.domain+"product/addproduct";
+    return this.http.post(url,product,{headers: headers})
+    .map(res => res.json());
+    }
+    
+   
 
    
 
@@ -24,17 +32,15 @@ domain=config.domain;
    // return this.db.list('/products').push(product);
   }
 
-  getAll() : Observable<Response>{
+  getAll() {
     let url=this.domain+"product/getallproducts";
    //return this.db.list('/categories',).valueChanges();
-   return this.http.get(url).map(
-     response => {
-       let body = response.json();
-       console.log(body)
-       return body || {};
-     }
-   
-   )
+   return this.http.get(url)
+   .map(response=>{
+    var res=response.json()
+    var categories=<Product[]>response.json();
+    return categories;
+  })
    //return null;
   }
   
@@ -59,7 +65,17 @@ domain=config.domain;
     return null;
   }
 
-  delete(productId) { 
-    //return this.db.object('/products/' + productId).remove();
-  }
+  deleteProduct(productId) { 
+    console.log(productId)
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      let url=this.domain+"product/deleteproduct/"+productId;
+      return this.http.delete(url,{headers: headers})
+      .map(res => 
+        {
+          console.log(res.json())
+        res.json()
+        });
+      }
+  
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { tokenNotExpired } from 'angular2-jwt';
 import { element } from 'protractor';
 import { CategoryService } from './../../../services/category.service';
@@ -17,8 +18,6 @@ import { MatPaginator } from '@angular/material';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  showAddCategoryForm = false;
-  showUpdateCategoryForm = false;
   categories: Category[];
   category: Category;
   subscription: Subscription;
@@ -31,7 +30,8 @@ export class AdminCategoryComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService,
+    private routerService:Router) {
     this.subscription = this.categoryService.getAll()
       .subscribe(categoryList => {
         this.categories = categoryList;
@@ -93,18 +93,23 @@ export class AdminCategoryComponent implements OnInit {
     this.categoryService.saveCategory(this.category).subscribe(data => {
       if (data) {
         console.log(data)
+        this.initializeTable(this.categories)
       }
 
     })
   }
 
   deleteCategory(categoryId) {
-    console.log(categoryId)
+    if(confirm('Do you really want to delete this category'))
+    {
     this.categoryService.deleteCategory(categoryId).subscribe(data => {
+      this.routerService.navigate(['/admin/manage-category'])
       if (data) {
         console.log(data)
       }
 
     })
+
+  }
   }
 }
