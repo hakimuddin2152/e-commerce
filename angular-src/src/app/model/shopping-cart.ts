@@ -1,35 +1,27 @@
+import { AuthService } from './../services/auth.service';
 import { Product } from './product';
 import { ShoppingCartItem } from './shopping-cart-item';
+import { AppUser } from 'app/model/app-user';
 
 export class ShoppingCart { 
-  items: ShoppingCartItem[] = [];
+  // items : ShoppingCartItem[]
+  // totalItems: number;
+  // totalPrice:number
+  // constructor(private user : AuthService){
+  // user
+  // }
 
-  constructor(private itemsMap: { [productId: string]: ShoppingCartItem }) {
-    this.itemsMap = itemsMap || {};
-    console.log('i mhere in shopping 1')
-    for (let productId in itemsMap) {
-      console.log('i mhere in shopping')
-      let item = itemsMap[productId];
-      this.items.push(new ShoppingCartItem({ ...item, $key: productId }));
-    }
-  }
+  // createCart(){
 
-  // getQuantity(product: Product) {
-  //   let item = this.itemsMap[product.$key];
-  //   return item ? item.quantity : 0;
   // }
-  
-  // get totalPrice() {
-  //   let sum = 0;
-  //   for (let productId in this.items) 
-  //     sum += this.items[productId].totalPrice;
-  //   return sum;
+  // addItemToCart(){
+
   // }
-  
-  // get totalItemsCount() {
-  //   let count = 0;
-  //   for (let productId in this.itemsMap) 
-  //     count += this.itemsMap[productId].quantity;
-  //   return count;
+  // clearCart(){
+
   // }
+  // deleteItemFromCart(){
+
+  // }
+
 }

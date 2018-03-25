@@ -18,8 +18,16 @@ module.exports.getAllProducts = function(callback) {
     Product.find(query, callback);
   }
 
-  
+  module.exports.addProduct = function(product, callback) {
+    product.save(callback)
+   }
+
   module.exports.getProductById = function(id, callback) {
     product.findById(callback)
     
+  }
+
+  module.exports.deleteProduct=function(id,callback){
+    const query = {_id: id}
+    Product.deleteOne(query,callback)
   }

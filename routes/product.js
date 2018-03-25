@@ -66,4 +66,19 @@ console.log('update method')
   });
 });
 
+productRoutes.route('/deleteproduct/:id').delete(function (req, res) {
+  let productId = req.params.id;
+  console.log('Id is '+req.params.id)
+  if (productId != null) {
+    Product.deleteProduct(productId, (err, product) => {
+      if (err)
+        res.send(err)
+      else {
+        res.send('Product deleted')
+      }
+
+    })
+  }
+})
+
 module.exports = productRoutes;

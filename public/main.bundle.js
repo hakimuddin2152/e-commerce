@@ -291,9 +291,10 @@ module.exports = "<div class=\"row\">\r\n  <a class=\"nav-link list-group-item\"
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCategoryComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -309,12 +310,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AdminCategoryComponent = (function () {
-    function AdminCategoryComponent(categoryService) {
+    function AdminCategoryComponent(categoryService, routerService) {
         var _this = this;
         this.categoryService = categoryService;
-        this.showAddCategoryForm = false;
-        this.showUpdateCategoryForm = false;
+        this.routerService = routerService;
         // tableResource: DataTableResource<Category>;
         // items: Category[] = [];
         // itemCount: number;
@@ -329,7 +330,7 @@ var AdminCategoryComponent = (function () {
     AdminCategoryComponent.prototype.ngOnInit = function () {
     };
     AdminCategoryComponent.prototype.initializeTable = function (categories) {
-        this.dataSource = new __WEBPACK_IMPORTED_MODULE_2__angular_material__["D" /* MatTableDataSource */](categories);
+        this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatTableDataSource */](categories);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
     };
@@ -363,38 +364,44 @@ var AdminCategoryComponent = (function () {
         this.isShowForm = !this.isShowForm;
     };
     AdminCategoryComponent.prototype.saveCategory = function (a) {
+        var _this = this;
         this.isShowForm = false;
         console.log(a);
         console.log(this.category);
         this.categoryService.saveCategory(this.category).subscribe(function (data) {
             if (data) {
                 console.log(data);
+                _this.initializeTable(_this.categories);
             }
         });
     };
     AdminCategoryComponent.prototype.deleteCategory = function (categoryId) {
-        console.log(categoryId);
-        this.categoryService.deleteCategory(categoryId).subscribe(function (data) {
-            if (data) {
-                console.log(data);
-            }
-        });
+        var _this = this;
+        if (confirm('Do you really want to delete this category')) {
+            this.categoryService.deleteCategory(categoryId).subscribe(function (data) {
+                _this.routerService.navigate(['/admin/manage-category']);
+                if (data) {
+                    console.log(data);
+                }
+            });
+        }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MatSort */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["A" /* MatSort */])
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSort */])
     ], AdminCategoryComponent.prototype, "sort", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatPaginator */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_material__["q" /* MatPaginator */])
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatPaginator */])
     ], AdminCategoryComponent.prototype, "paginator", void 0);
     AdminCategoryComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-admin-category',
             template: __webpack_require__("../../../../../src/app/components/admin/admin-category/admin-category.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/admin/admin-category/admin-category.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_category_service__["a" /* CategoryService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_category_service__["a" /* CategoryService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]])
     ], AdminCategoryComponent);
     return AdminCategoryComponent;
 }());
@@ -546,7 +553,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/admin/admin-products/admin-products.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  \n\n        <div *ngIf=\"showCategoryForm\" class=\"col-9\">\n            <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\n                <div class=\"form-group\">\n                  <label for=\"key\">Key</label>\n                  <input type=\"text\" [(ngModel)]=\"key\" name=\"key\" \n                  class=\"form-control\" id=\"key\" name=\"key\" aria-describedby=\"title\" \n                  placeholder=\"Enter Category Name\">\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"title\">Title</label>\n                    <input type=\"text\" [(ngModel)]=\"title\" name=\"title\" rows=\"4\" \n                    class=\"form-control\" id=\"title\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Description\">\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"category\">Is Category a featured category?</label>\n                    <select class=\"form-control\" [(ngModel)]=\"featured\" name=\"featured\" id=\"featured\">\n                      <option  value=\"true\">True</option>\n                      <option  value=\"false\">False</option>\n                    </select>\n                  </div>\n                  <div class=\"form-group\">\n                    <label for=\"imageUrl\">Category Image</label>\n                    <input type=\"text\" [(ngModel)]=\"imageUrl\" name=\"imageUrl\" rows=\"4\" \n                    class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Description\" \n                    placeholder=\"Enter Category Image URL\">\n                  </div>\n        \n                  <div class=\"form-group\">\n                <button type=\"submit\" class=\"btn btn-primary\">Save</button>\n              </div>\n              </form>\n        \n        \n        </div>\n\n<div *ngIf=\"showProductForm\" class=\"col-9\">\n    <form #f=\"ngForm\" (ngSubmit)=\"saveProduct(f.value)\">\n        <div class=\"form-group\">\n          <label for=\"title\">Title</label>\n          <input type=\"text\" ngModel name=\"title\" \n          class=\"form-control\" id=\"title\" aria-describedby=\"title\" \n          placeholder=\"Enter title\">\n        </div>\n        <div class=\"form-group\">\n            <label for=\"description\">Description</label>\n            <input type=\"text\" ngModel name=\"description\" rows=\"4\" class=\"form-control\" id=\"description\" aria-describedby=\"Description\" \n            placeholder=\"Enter Description\">\n          </div>\n\n        <div class=\"form-group\">\n          <label for=\"category\">Select Category</label>\n          <select class=\"form-control\" ngModel name=\"category\" id=\"category\">\n            <option *ngFor=\"let c of categories$ | async\"  [value]=\"c.key\">{{c.title }}</option>\n          </select>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"price\">Price</label>\n            <input type=\"text\" ngModel name=\"price\" class=\"form-control\" id=\"price\" \n            aria-describedby=\"Price\" \n            placeholder=\"Enter price\">\n          </div>\n\n        <div class=\"form-group\">\n            <label for=\"imageUrl\">Image Url</label>\n            <input type=\"text\" ngModel name=\"imageUrl\" \n            class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Image Url\" \n            placeholder=\"Enter Image Url\">\n          </div>\n          <div class=\"form-group\">\n        <button type=\"save\" class=\"btn btn-primary\">Save</button>\n      </div>\n      </form>\n\n\n</div>   \n</div>"
+module.exports = "<div class=\"row\">\n  <a class=\"nav-link list-group-item\" (click)=\"showForm()\" \n  [style.display]=\"!isShowForm ?'block':'none'\">Add new Product</a>\n</div>\n<div class=\"row\">\n    <div *ngIf=\"isShowForm\" class=\"col-6\">\n        <form #f=\"ngForm\" (ngSubmit)=\"saveCategory(f.value)\">\n            <div class=\"form-group\">\n              <label for=\"key\">Title</label>\n              <input type=\"text\" [(ngModel)]=\"product.title\"  \n              class=\"form-control\" id=\"title\" name=\"product.title\" aria-describedby=\"title\" \n              placeholder=\"Enter Product Name\">\n            </div>\n            <div class=\"form-group\">\n                <label for=\"title\">Description</label>\n                <input type=\"text\" [(ngModel)]=\"product.description\" name=\"product.description\" rows=\"4\" \n                class=\"form-control\" id=\"description\" aria-describedby=\"Description\" \n                placeholder=\"Enter Description\">\n              </div>\n              <div class=\"form-group\">\n                <label for=\"category\">Price</label>\n                <input type=\"text\" [(ngModel)]=\"product.price\" name=\"product.price\" rows=\"4\" \n                class=\"form-control\" id=\"price\" aria-describedby=\"Price\" \n                placeholder=\"Enter price\">\n              </div>\n              <div class=\"form-group\">\n                <label for=\"category\">Category</label>\n                <input type=\"text\" [(ngModel)]=\"product.category\" name=\"product.category\" rows=\"4\" \n                class=\"form-control\" id=\"category\" aria-describedby=\"category\" \n                placeholder=\"Enter category\">\n              </div>\n              \n              <div class=\"form-group\">\n                <label for=\"imageUrl\">Image</label>\n                <input type=\"text\" [(ngModel)]=\"product.imageUrl\" name=\"product.imageUrl\" rows=\"4\" \n                class=\"form-control\" id=\"imageUrl\" aria-describedby=\"Image Name\" \n                placeholder=\"Enter Image name\">\n              </div>\n    \n              <div class=\"form-group\">\n                <button type=\"submit\" class=\"form-control offset-2 col-6 btn btn-primary\">Save Changes</button>\n              </div>\n              \n    \n          </form>\n    \n    \n    </div>\n    \n</div>\n\n\n<div class=\"example-container mat-elevation-z8\">\n        <mat-form-field>\n                <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n              </mat-form-field>\n        <mat-table #table [dataSource]=\"dataSource\" matSort>\n      \n          <!--- Note that these columns can be defined in any order.\n                The actual rendered columns are set as a property on the row definition\" -->\n      \n          <!-- Position Column -->\n          <ng-container matColumnDef=\"key\">\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Sno </mat-header-cell>\n            <mat-cell *matCellDef=\"let element\">1 </mat-cell>\n          </ng-container>\n      \n          <!-- Title Column -->\n          <ng-container matColumnDef=\"title\">\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Product Title </mat-header-cell>\n            <mat-cell *matCellDef=\"let element\"> {{element.title}} </mat-cell>\n          </ng-container>\n      \n          <!-- Featured Column -->\n          <ng-container matColumnDef=\"price\">\n            <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>\n            <mat-cell *matCellDef=\"let element\"> {{element.price}} </mat-cell>\n          </ng-container>\n      \n          <ng-container matColumnDef=\"Update\">\n            <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>\n            <mat-cell *matCellDef=\"let element\">\n              <a (click)=\"showForm(element)\" class=\"nav-link\" >Edit</a>  </mat-cell>\n          </ng-container>\n\n          <ng-container matColumnDef=\"Delete\">\n            <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>\n            <mat-cell *matCellDef=\"let element\">\n              <a (click)=\"deleteCategory(element._id)\" class=\"nav-link\" >Delete</a>  </mat-cell>\n          </ng-container>\n      \n          <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\n          <mat-row *matRowDef=\"let row; columns: displayedColumns;\"></mat-row>\n        </mat-table>\n        <mat-paginator #paginator\n                 [pageSize]=\"10\"\n                 [pageSizeOptions]=\"[5, 10, 20]\"\n                 [showFirstLastButtons]=\"true\">\n  </mat-paginator>\n      </div>\n"
 
 /***/ }),
 
@@ -555,9 +562,10 @@ module.exports = "<div class=\"row\">\n  \n\n        <div *ngIf=\"showCategoryFo
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminProductsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_app_services_category_service__ = __webpack_require__("../../../../../src/app/services/category.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_product_service__ = __webpack_require__("../../../../../src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -570,44 +578,102 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
+
+
 var AdminProductsComponent = (function () {
-    function AdminProductsComponent(categorieService, authService) {
-        this.categorieService = categorieService;
-        this.authService = authService;
-        this.showCategoryForm = true;
-        this.categories$ = categorieService.getAll();
-    }
-    AdminProductsComponent.prototype.showForm = function (event) {
-        var linkId = event.srcElement.attributes.id.nodeValue;
-        console.log(linkId);
-        console.log(event);
-        if (linkId == "productLink") {
-            this.showCategoryForm = false;
-            this.showProductForm = true;
-        }
-        else if (linkId == "categoryLink") {
-            this.showProductForm = false;
-            this.showCategoryForm = true;
-        }
-    };
-    AdminProductsComponent.prototype.saveCategory = function (formData) {
-        console.log(formData);
-        this.categorieService.saveCategory(formData).subscribe(function (data) {
-            if (data) {
-                console.log(data);
-            }
-            console;
+    function AdminProductsComponent(productService, routerService) {
+        var _this = this;
+        this.productService = productService;
+        this.routerService = routerService;
+        // tableResource: DataTableResource<Category>;
+        // items: Category[] = [];
+        // itemCount: number;
+        this.displayedColumns = ['key', 'title', 'price', 'Update', 'Delete'];
+        this.isShowForm = false;
+        this.subscription = this.productService.getAll()
+            .subscribe(function (productList) {
+            _this.products = productList;
+            _this.initializeTable(_this.products);
         });
-    };
+    }
     AdminProductsComponent.prototype.ngOnInit = function () {
     };
+    AdminProductsComponent.prototype.initializeTable = function (products) {
+        this.dataSource = new __WEBPACK_IMPORTED_MODULE_3__angular_material__["D" /* MatTableDataSource */](products);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+    };
+    AdminProductsComponent.prototype.applyFilter = function (filterValue) {
+        filterValue = filterValue.trim(); // Remove whitespace
+        filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+        this.dataSource.filter = filterValue;
+    };
+    AdminProductsComponent.prototype.showForm = function (element) {
+        if (element == undefined) {
+            this.product = {
+                _id: '',
+                title: '',
+                description: '',
+                price: 0,
+                category: '',
+                imageUrl: ''
+            };
+            console.log(this.product);
+        }
+        else {
+            this.product = {
+                _id: element._id,
+                description: element.description,
+                title: element.title,
+                price: element.price,
+                category: element.category,
+                imageUrl: element.imageUrl
+            };
+        }
+        // }
+        console.log(element);
+        this.isShowForm = !this.isShowForm;
+    };
+    AdminProductsComponent.prototype.saveCategory = function (a) {
+        var _this = this;
+        this.isShowForm = false;
+        console.log(a);
+        console.log(this.product);
+        this.productService.saveProduct(this.product).subscribe(function (data) {
+            if (data) {
+                console.log(data);
+                _this.initializeTable(_this.products);
+            }
+        });
+    };
+    AdminProductsComponent.prototype.deleteCategory = function (productId) {
+        if (confirm('Do you really want to delete this category')) {
+            this.productService.deleteProduct(productId).subscribe(function (data) {
+                if (data) {
+                    console.log(data);
+                }
+                // })
+            });
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSort */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material__["A" /* MatSort */])
+    ], AdminProductsComponent.prototype, "sort", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatPaginator */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_material__["q" /* MatPaginator */])
+    ], AdminProductsComponent.prototype, "paginator", void 0);
     AdminProductsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
             selector: 'app-admin-products',
             template: __webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.html"),
             styles: [__webpack_require__("../../../../../src/app/components/admin/admin-products/admin-products.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_app_services_category_service__["a" /* CategoryService */], __WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_product_service__["a" /* ProductService */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]])
     ], AdminProductsComponent);
     return AdminProductsComponent;
 }());
@@ -931,7 +997,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/product-card/product-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"product.title\" class=\"card\">\n    <img *ngIf=\"product.imageUrl\" class=\"card-img-top productImage\" \n    [src]=\"product.imageUrl\" alt=\"{{ product.title }}\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{ product.title }}</h4>\n      <p class=\"card-text\">{{ product.price | currency:'USD':true }}</p>\n      <p class=\"card-text\">{{product.description}}</p>\n    </div>\n    <div *ngIf=\"showActions && shoppingCart\" class=\"card-footer\">\n      \n      <button \n        *ngIf=\"shoppingCart.getQuantity(product) === 0; else updateQuantity\"\n        (click)=\"addToCart()\"\n        class=\"btn btn-secondary btn-block\">Add to Cart</button>\n      <ng-template #updateQuantity>\n        <!-- <product-quantity [product]=\"product\" [shopping-cart]=\"shoppingCart\">\n        </product-quantity> -->\n      </ng-template>\n    </div>\n  </div>    \n  "
+module.exports = "<div *ngIf=\"product.title\" class=\"card\">\n    <img *ngIf=\"product.imageUrl\" class=\"card-img-top productImage\" \n    [src]=\"relativePath+product.imageUrl\" alt=\"{{ product.title }}\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{ product.title }}</h4>\n      <p class=\"card-text\">{{ product.price | currency:'USD':true }}</p>\n      <p class=\"card-text\">{{product.description}}</p>\n    </div>\n    <div *ngIf=\"showActions && shoppingCart\" class=\"card-footer\">\n      \n      <button \n        *ngIf=\"shoppingCart.getQuantity(product) === 0; else updateQuantity\"\n        (click)=\"addToCart()\"\n        class=\"btn btn-secondary btn-block\">Add to Cart</button>\n      <ng-template #updateQuantity>\n        <!-- <product-quantity [product]=\"product\" [shopping-cart]=\"shoppingCart\">\n        </product-quantity> -->\n      </ng-template>\n    </div>\n  </div>    \n  "
 
 /***/ }),
 
@@ -956,6 +1022,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ProductCardComponent = (function () {
     function ProductCardComponent() {
         this.showActions = true;
+        this.relativePath = './../../../../assets/img/';
     }
     ProductCardComponent.prototype.addToCart = function () {
         //  this.cartService.addToCart(this.product);
@@ -1457,78 +1524,14 @@ var AuthGuard = (function () {
 
 /***/ }),
 
-/***/ "../../../../../src/app/model/shopping-cart-item.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShoppingCartItem; });
-var ShoppingCartItem = (function () {
-    function ShoppingCartItem(init) {
-        Object.assign(this, init);
-    }
-    Object.defineProperty(ShoppingCartItem.prototype, "totalPrice", {
-        get: function () { return this.price * this.quantity; },
-        enumerable: true,
-        configurable: true
-    });
-    return ShoppingCartItem;
-}());
-
-
-
-/***/ }),
-
 /***/ "../../../../../src/app/model/shopping-cart.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShoppingCart; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shopping_cart_item__ = __webpack_require__("../../../../../src/app/model/shopping-cart-item.ts");
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-
 var ShoppingCart = (function () {
-    function ShoppingCart(itemsMap) {
-        this.itemsMap = itemsMap;
-        this.items = [];
-        this.itemsMap = itemsMap || {};
-        console.log('i mhere in shopping 1');
-        for (var productId in itemsMap) {
-            console.log('i mhere in shopping');
-            var item = itemsMap[productId];
-            this.items.push(new __WEBPACK_IMPORTED_MODULE_0__shopping_cart_item__["a" /* ShoppingCartItem */](__assign({}, item, { $key: productId })));
-        }
+    function ShoppingCart() {
     }
-    ShoppingCart.prototype.getQuantity = function (product) {
-        var item = this.itemsMap[product.$key];
-        return item ? item.quantity : 0;
-    };
-    Object.defineProperty(ShoppingCart.prototype, "totalPrice", {
-        get: function () {
-            var sum = 0;
-            for (var productId in this.items)
-                sum += this.items[productId].totalPrice;
-            return sum;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ShoppingCart.prototype, "totalItemsCount", {
-        get: function () {
-            var count = 0;
-            for (var productId in this.itemsMap)
-                count += this.itemsMap[productId].quantity;
-            return count;
-        },
-        enumerable: true,
-        configurable: true
-    });
     return ShoppingCart;
 }());
 
@@ -1704,7 +1707,12 @@ var ProductService = (function () {
         return null;
     };
     ProductService.prototype.saveProduct = function (product) {
-        //return this.db.list('/products').push(product)
+        console.log(product);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var url = this.domain + "product/addproduct";
+        return this.http.post(url, product, { headers: headers })
+            .map(function (res) { return res.json(); });
     };
     ProductService.prototype.create = function (product) {
         // return this.db.list('/products').push(product);
@@ -1712,10 +1720,11 @@ var ProductService = (function () {
     ProductService.prototype.getAll = function () {
         var url = this.domain + "product/getallproducts";
         //return this.db.list('/categories',).valueChanges();
-        return this.http.get(url).map(function (response) {
-            var body = response.json();
-            console.log(body);
-            return body || {};
+        return this.http.get(url)
+            .map(function (response) {
+            var res = response.json();
+            var categories = response.json();
+            return categories;
         });
         //return null;
     };
@@ -1735,8 +1744,16 @@ var ProductService = (function () {
         //return this.db.object('/products/' + productId).update(product);
         return null;
     };
-    ProductService.prototype.delete = function (productId) {
-        //return this.db.object('/products/' + productId).remove();
+    ProductService.prototype.deleteProduct = function (productId) {
+        console.log(productId);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        headers.append('Content-Type', 'application/json');
+        var url = this.domain + "product/deleteproduct/" + productId;
+        return this.http.delete(url, { headers: headers })
+            .map(function (res) {
+            console.log(res.json());
+            res.json();
+        });
     };
     ProductService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
