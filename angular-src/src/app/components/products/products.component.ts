@@ -57,8 +57,12 @@ export class ProductsComponent implements OnInit{
   }
   ngOnInit(){ 
     console.log('this.route.paramMap')
-this.products=this.route.paramMap.switchMap((params: ParamMap) =>
-this.productService.getProductByCategory(params.get('category')))
+this.products=this.route.paramMap.switchMap((params: ParamMap) =>{
+  if(params.get('category')==undefined)
+  return  this.productService.getProductByCategory('perfume')
+  else
+  return  this.productService.getProductByCategory(params.get('category'))
+})
   }
 
   ngOnDestroy

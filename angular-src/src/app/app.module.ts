@@ -105,7 +105,7 @@ import { CategoryService } from 'app/services/category.service';
 })
 export class AngularMaterialModule {}
 const appRoutes: Routes =  [
-  {path:'', component: HomeComponent},
+  {path:'', component: ProductsComponent},
   {path:'register', component: RegisterComponent},
   {path:'login', component: LoginComponent},
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},

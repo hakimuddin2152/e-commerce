@@ -205,7 +205,7 @@ var AngularMaterialModule = (function () {
 }());
 
 var appRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_26_app_components_products_products_component__["a" /* ProductsComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */] },
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */]] },
@@ -916,7 +916,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-light fixed-top\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><img src=\"../../../assets/img/logo.jpg\" \n    style=\"width:100px; height: 70px;\" title=\"logo\" ></a>\n      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n\n      <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n        <ul class=\"navbar-nav mr-auto\">\n          <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\n            <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span></span></a>\n          </li> \n        </ul> \n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\n            <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard </a>\n          </li>\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\n            <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile </a>\n          </li>\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\n            <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\n          </li>\n          <li class=\"nav-item\" *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\">\n            <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\n          </li>\n          <li class=\"nav-item\" *ngIf=\"authService.loggedIn()\"><a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n          </li>\n        </ul>\n      </div>\n    </nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-light bg-light fixed-top\">\n    <a class=\"navbar-brand\" routerLink=\"/\"><img src=\"../../../assets/img/logo.jpg\" \n      style=\"width:72px; height: 53px;\" title=\"logo\" ></a>\n      \n      <div class=\"navbar-nav mr-auto\">\n             \n            <div class=\"btn-group\">\n              <a class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <img src=\"../../../assets/img/my-account.png\" style=\"height:40px;width:40px;\">\n              </a>\n             <div class=\"dropdown-menu\">\n               <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\n               <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\n             </div>\n            </div> <a class=\"\" routerLink=\"/\">\n              <img src=\"../../../assets/img/shopping-cart-logo.png\" style=\"height:40px;width:40px;\">\n              <span  style=\"\">1</span>\n          </a>\n          \n    </div>\n  \n  <!-- <button class=\"navbar-toggle collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarMenu\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse\" id=\"navbarMenu\">\n      <a class=\"nav-link\" [routerLink]=\"['/login']\">Login </a>\n      <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\n  </div> -->\n   \n      </nav>"
 
 /***/ }),
 
@@ -997,7 +997,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/product-card/product-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"product.title\" class=\"card\">\n    <img *ngIf=\"product.imageUrl\" class=\"card-img-top productImage\" \n    [src]=\"relativePath+product.imageUrl\" alt=\"{{ product.title }}\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{ product.title }}</h4>\n      <p class=\"card-text\">{{ product.price | currency:'USD':true }}</p>\n      <p class=\"card-text\">{{product.description}}</p>\n    </div>\n    <div *ngIf=\"showActions && shoppingCart\" class=\"card-footer\">\n      \n      <button \n        *ngIf=\"shoppingCart.getQuantity(product) === 0; else updateQuantity\"\n        (click)=\"addToCart()\"\n        class=\"btn btn-secondary btn-block\">Add to Cart</button>\n      <ng-template #updateQuantity>\n        <!-- <product-quantity [product]=\"product\" [shopping-cart]=\"shoppingCart\">\n        </product-quantity> -->\n      </ng-template>\n    </div>\n  </div>    \n  "
+module.exports = "<div *ngIf=\"product.title\" class=\"card\">\n    <img *ngIf=\"product.imageUrl\" class=\"card-img-top productImage\" \n    [src]=\"relativePath+product.imageUrl\" alt=\"{{ product.title }}\">\n    <div class=\"card-body\">\n      <h4 class=\"card-title\">{{ product.title }}</h4>\n      <p class=\"card-text\">{{ product.price | currency:'RS':true }}</p>\n      <p class=\"card-text\">{{product.description}}</p>\n      <button class=\"btn-primary\">Add to Cart</button>\n    </div>\n\n    <div *ngIf=\"showActions && shoppingCart\" class=\"card-footer\">\n      \n        \n      <button \n        *ngIf=\"shoppingCart.getQuantity(product) === 0; else updateQuantity\"\n        (click)=\"addToCart()\"\n        class=\"btn btn-secondary btn-block\">Add to Cart</button>\n      <ng-template #updateQuantity>\n        \n        <!-- <product-quantity [product]=\"product\" [shopping-cart]=\"shoppingCart\">\n        </product-quantity> -->\n      </ng-template>\n    </div>\n  </div>    \n  "
 
 /***/ }),
 
@@ -1205,7 +1205,10 @@ var ProductsComponent = (function () {
         var _this = this;
         console.log('this.route.paramMap');
         this.products = this.route.paramMap.switchMap(function (params) {
-            return _this.productService.getProductByCategory(params.get('category'));
+            if (params.get('category') == undefined)
+                return _this.productService.getProductByCategory('perfume');
+            else
+                return _this.productService.getProductByCategory(params.get('category'));
         });
     };
     ProductsComponent = __decorate([

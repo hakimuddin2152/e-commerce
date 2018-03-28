@@ -1,31 +1,29 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  <a class="navbar-brand" routerLink="/"><img src="../../../assets/img/logo.jpg" 
-    style="width:100px; height: 70px;" title="logo" ></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/']">Home <span></span></a>
-          </li> 
-        </ul> 
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/dashboard']">Dashboard </a>
-          </li>
-          <li class="nav-item" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/profile']">Profile </a>
-          </li>
-          <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/login']">Login </a>
-          </li>
-          <li class="nav-item" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">
-            <a class="nav-link" [routerLink]="['/register']">Register</a>
-          </li>
-          <li class="nav-item" *ngIf="authService.loggedIn()"><a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <a class="navbar-brand" routerLink="/"><img src="../../../assets/img/logo.jpg" 
+      style="width:72px; height: 53px;" title="logo" ></a>
+      
+      <div class="navbar-nav mr-auto">
+             
+            <div class="btn-group">
+              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="../../../assets/img/my-account.png" style="height:40px;width:40px;">
+              </a>
+             <div class="dropdown-menu">
+               <a class="nav-link" [routerLink]="['/login']">Login </a>
+               <a class="nav-link" [routerLink]="['/register']">Register</a>
+             </div>
+            </div> <a class="" routerLink="/">
+              <img src="../../../assets/img/shopping-cart-logo.png" style="height:40px;width:40px;">
+              <span  style="">1</span>
+          </a>
+          
+    </div>
+  
+  <!-- <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse" id="navbarMenu">
+      <a class="nav-link" [routerLink]="['/login']">Login </a>
+      <a class="nav-link" [routerLink]="['/register']">Register</a>
+  </div> -->
+   
+      </nav>
