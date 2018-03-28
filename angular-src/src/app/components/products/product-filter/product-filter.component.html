@@ -28,10 +28,9 @@
     <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a 
       *ngFor="let c of categories$ | async" 
-      routerLink="/products"
-      [queryParams]="{ category: c.name }"
+      [routerLink]="['/products/',c.key]"
       class="list-group-item list-group-item-action"
-      [class.active]="category === c.key"
+      [routerLinkActive]="'active'"
       >
       {{ c.title }}
     </a>
