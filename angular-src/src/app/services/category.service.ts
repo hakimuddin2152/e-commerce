@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-//import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { query } from '@angular/core/src/animation/dsl';
 import { Observable } from 'rxjs/Observable';
 import { Http ,Headers} from '@angular/http';
 import { Response } from '@angular/http/';
 import { Category } from 'app/model/category';
+
 const config=require('./../../../../config/database.js') 
 @Injectable()
 export class CategoryService {
@@ -20,7 +19,6 @@ domain=config.domain;
     //return this.db.list('/categories',).valueChanges();
     return this.http.get(url)
     .map(response=>{
-      var res=response.json()
       var categories=<Category[]>response.json();
       return categories;
     })

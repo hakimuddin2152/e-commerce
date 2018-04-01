@@ -91,6 +91,7 @@ export class AdminCategoryComponent implements OnInit {
     console.log(a)
     console.log(this.category)
     this.categoryService.saveCategory(this.category).subscribe(data => {
+      console.log('category saved successfully !!!!!')
       if (data) {
         console.log(data)
         this.initializeTable(this.categories)

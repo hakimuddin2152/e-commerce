@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs/Observable';
+import { Location } from './../../model/location';
+import { LocationService } from './../../services/location.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -10,12 +13,35 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class NavbarComponent implements OnInit {
 
+  userLocation;
+  cordinates={
+    "latitude":'18.6004461',
+    "longitude":'73.8231716'
+  }
   constructor(
     private authService: AuthService,
     private router: Router,
-    private flashMessage: FlashMessagesService) { }
+    private location : LocationService,
+    private flashMessage: FlashMessagesService) { 
+    // navigator.geolocation.getCurrentPosition(function(a){
+    //   if(confirm('This site wants your location')){
+    //     this.location.getLocation(a)
+    //   }
+      
+    // })
+      
+    }
 
   ngOnInit() {
+    this.location.getLocation(this.cordinates).subscribe(data => {
+      this.userLocation=data
+      console.log(this.userLocation[0].extra.premise,',' , this.userLocation[0].city)
+    }) 
+  }
+
+  callLocation(){
+   
+      
   }
 
   onLogoutClick() {

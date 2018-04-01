@@ -1,3 +1,4 @@
+import { LocationService } from './services/location.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -148,7 +149,7 @@ const appRoutes: Routes =  [
     AngularMaterialModule,
     CdkTableModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard,ProductService,CategoryService],
+  providers: [ValidateService, AuthService, AuthGuard,ProductService,CategoryService,LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
