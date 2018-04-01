@@ -14,11 +14,13 @@
     background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(251, 193, 59, 0.91)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='20' d='M4 7h22M4 15h22M4 23h22'/></svg>")
 }
 
-span{
-    color:white
+.address{
+    color:white;
+    padding-left:15px;
 }
 .address{
-    background: #2216c7;
-    margin-top:60px;
-    margin-left:15px !important;
+    margin-left:10px !important;
+}
+.hide-arrow{
+    font-size:0rem;
 }

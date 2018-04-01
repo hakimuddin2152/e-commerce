@@ -1,24 +1,30 @@
-<div class="row"><nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-    <a class="navbar-brand" routerLink="/"><img src="../../../assets/img/logo.jpg" 
-      style="width:72px; height: 53px;" title="logo" ></a>
+<div class="row">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
       
-      <div class="">
-            <div class="btn-group">
-              <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="../../../assets/img/my-account.png" style="height:40px;width:40px;">
-              </a>
-             <div class="dropdown-menu">
-               <a class="nav-link" [routerLink]="['/login']">Login </a>
-               <a class="nav-link" [routerLink]="['/register']">Register</a>
-             </div>
-            </div> <a class="" routerLink="/">
-              <img src="../../../assets/img/shopping-cart-logo.png" style="height:40px;width:40px;">
-              <span>1</span>
+  <div class="col-2">
+      <a class="navbar-brand" routerLink="/"><img src="../../../assets/img/logo.jpg" 
+        style="width:72px; height: 53px;" title="logo" ></a>
+   </div>
+  <div class="col-6">
+      <div class="address"><span>{{userLocation?.extra.neighborhood}} 
+        <br> 
+        {{userLocation?.city}} </span></div>
+  </div>
+  <div class="col-2">
+      <div class="btn-group">
+          <a class="btn-default dropdown-toggle hide-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src="../../../assets/img/my-account.png" style="height:40px;width:40px;">
           </a>
-          
-    </div>
-    
+         <div class="dropdown-menu">
+           <a class="nav-link" [routerLink]="['/login']">Login </a>
+           <a class="nav-link" [routerLink]="['/register']">Register</a>
+         </div>
+        </div>
+  </div>
+  <div class="col-2">
+      <a class="" routerLink="/">
+        <img src="../../../assets/img/shopping-cart-logo.png" style="height:40px;width:40px;">
+        
+     </a>
+  </div>
   </nav>
 </div>
-  <div class="row">
-      <div class="address"><span>Your Current Address : {{userLocation?.extra.premise}} , {{userLocation?.city}}</span></div>
-  </div>
