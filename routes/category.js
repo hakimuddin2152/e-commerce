@@ -6,7 +6,7 @@ const Category = require('../models/category');
 
 categoryRoutes.route('/addcategory').post(function (req, res) {
 
-  let newCategory = new Category({
+    let newCategory = new Category({
     key: req.body.key,
     title: req.body.title,
     featured: req.body.featured,

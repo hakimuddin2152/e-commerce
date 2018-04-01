@@ -35,6 +35,7 @@ const app = express();
 const users = require('./routes/users');
 const categories=require('./routes/category')
 const products=require('./routes/product')
+const location=require('./routes/location')
 // Port Number
 const port = process.env.PORT || 8080;
 
@@ -56,13 +57,10 @@ require('./config/passport')(passport);
 app.use('/users', users);
 app.use('/category',categories);
 app.use('/product',products)
+app.use('/location',location)
 // Index Route
 app.get('/', (req, res) => {
   res.send('invaild endpoint');
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 // Start Server
