@@ -34,8 +34,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.location.getLocation(this.cordinates).subscribe(data => {
-      this.userLocation=data
-      console.log(this.userLocation[0].extra.premise,',' , this.userLocation[0].city)
+      this.userLocation=data[0]
+      console.log(this.userLocation.extra.premise,',' , this.userLocation.city)
     }) 
   }
 
