@@ -24,38 +24,24 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private location : LocationService,
     private flashMessage: FlashMessagesService) { 
-    // navigator.geolocation.getCurrentPosition(function(a){
-    //   if(confirm('This site wants your location')){
-    //     this.location.getLocation(a)
-    //   }
-      
-    // })
-      
+      var self=this
+      navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position)
+        self.cordinates={
+          latitude:position.coords.latitude.toString(),
+          longitude:position.coords.longitude.toString()
+        }
+        self.location.getLocation(self.cordinates).subscribe(data => {
+        console.log(data) 
+          self.userLocation=data[0]
+          console.log(self.userLocation.extra.premise,',' , self.userLocation.city)
+        })
+      })
     }
 
   ngOnInit() {
  
-    var self=this
-    navigator.geolocation.getCurrentPosition(function(position){
-      console.log(position)
-      self.cordinates={
-        latitude:position.coords.latitude.toString(),
-        longitude:position.coords.longitude.toString()
-      }
-      self.location.getLocation(self.cordinates).subscribe(data => {
-      console.log(data)
-        self.userLocation=data[0]
-        console.log(self.userLocation.extra.premise,',' , self.userLocation.city)
-      })
-    })
     
-  }
-
-  callLocation(position){
-    
-  }
-
-  getCordinates=function(position){
     
   }
 
