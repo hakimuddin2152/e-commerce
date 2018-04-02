@@ -1,3 +1,4 @@
+import { ProductsComponent } from 'app/components/products/products.component';
 import { Observable } from 'rxjs/Observable';
 import { Location } from './../../model/location';
 import { LocationService } from './../../services/location.service';
@@ -15,8 +16,8 @@ export class NavbarComponent implements OnInit {
 
   userLocation;
   cordinates={
-    "latitude":'18.6004461',
-    "longitude":'73.8231716'
+    latitude:'',
+    longitude:''
   }
   constructor(
     private authService: AuthService,
@@ -33,15 +34,29 @@ export class NavbarComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.location.getLocation(this.cordinates).subscribe(data => {
-      this.userLocation=data[0]
-      console.log(this.userLocation.extra.premise,',' , this.userLocation.city)
-    }) 
+ 
+    var self=this
+    navigator.geolocation.getCurrentPosition(function(position){
+      console.log(position)
+      self.cordinates={
+        latitude:position.coords.latitude.toString(),
+        longitude:position.coords.longitude.toString()
+      }
+      self.location.getLocation(self.cordinates).subscribe(data => {
+      console.log(data)
+        self.userLocation=data[0]
+        console.log(self.userLocation.extra.premise,',' , self.userLocation.city)
+      })
+    })
+    
   }
 
-  callLocation(){
-   
-      
+  callLocation(position){
+    
+  }
+
+  getCordinates=function(position){
+    
   }
 
   onLogoutClick() {
