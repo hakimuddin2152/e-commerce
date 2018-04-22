@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './services/shopping-cart.service';
 import { LocationService } from './services/location.service';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -149,7 +150,9 @@ const appRoutes: Routes =  [
     AngularMaterialModule,
     CdkTableModule
   ],
-  providers: [ValidateService, AuthService, AuthGuard,ProductService,CategoryService,LocationService],
+  providers: [ValidateService, 
+    AuthService, AuthGuard,ProductService,CategoryService,LocationService,
+  ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

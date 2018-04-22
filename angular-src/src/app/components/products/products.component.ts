@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Product } from './../../model/product';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ProductService } from './../../services/product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import 'rxjs/add/operator/switchMap';
 import { CategoryService } from 'app/services/category.service';
 import { Response } from '@angular/http/src/static_response';
