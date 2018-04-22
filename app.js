@@ -6,7 +6,6 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 
-
 // Connect To Database (NEW) But not working!!!!!!!!!! (because of secret in db.js!!!!!)
 //const db = require('./config/database');
 // Map global promise - get rid of warning
@@ -36,6 +35,8 @@ const users = require('./routes/users');
 const categories=require('./routes/category')
 const products=require('./routes/product')
 const location=require('./routes/location')
+const payment=require('./routes/payment')
+const cart=require('./routes/cart')
 // Port Number
 const port = process.env.PORT || 8080;
 
@@ -58,10 +59,27 @@ app.use('/users', users);
 app.use('/category',categories);
 app.use('/product',products)
 app.use('/location',location)
+app.use('/checkout',payment)
+app.use('/cart',cart)
 // Index Route
-app.get('/', (req, res) => {
-  res.send('invaild endpoint');
-});
+
+// app.get('/', (req, res) => {
+//   res.send('invaild endpoint');
+// });
+
+
+// set public directory to serve static html files 
+app.use('/', express.static(path.join(__dirname, 'public'))); 
+
+app.post('/makepayment',(req,res)=>{
+  res.send('hakim is a good person')
+  console.log(req.body)
+})
+// redirect to store when user hits http://localhost:3000
+app.get('/' , (req , res) => {
+    res.redirect('/index.html'); 
+})
+
 
 // Start Server
 app.listen(port, () => {
